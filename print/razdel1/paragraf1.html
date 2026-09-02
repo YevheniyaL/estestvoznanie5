@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Печать карточек — §1. Роль науки</title>
+<style>
+  body {
+    font-family: 'PT Sans', Arial, sans-serif;
+    color: #222;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .instructions {
+    background: #f2f5fa;
+    border: 1px solid #c7d3e3;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .instructions b { color: #1a3a66; }
+  .page-label {
+    font-size: 13px;
+    color: #888;
+    margin: 26px 0 6px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 40mm;
+    border: 1px solid #333;
+    page-break-before: always;
+  }
+  .cell {
+    border: 1px dashed #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 14px;
+  }
+  .cell.term { font-size: 18px; font-weight: bold; color: #1a3a66; }
+  .cell.def { font-size: 13px; line-height: 1.4; }
+  @media print {
+    .instructions { display: block; }
+    .page-label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Карточки §1. Роль науки — печать для вырезания (стр. 6–10)</h1>
+<div class="instructions">
+  <p><b>Если принтер печатает с двух сторон (дуплекс):</b> в диалоге печати
+  включите "Печать на двух сторонах" / "Two-sided" и переплёт по
+  <b>длинному краю</b>. Термин и определение окажутся на разных сторонах
+  одной карточки. Разрежьте лист по пунктирным линиям — получится
+  7 двусторонних карточек.</p>
+  <p><b>Если принтер печатает только с одной стороны:</b> напечатайте
+  первый лист (термины), переверните эту же стопку и вставьте в лоток снова,
+  чтобы напечатать второй лист (определения) на обратной стороне. Сначала
+  проверьте на одном листе, что термин и определение совпали на одной
+  карточке, прежде чем печатать весь тираж.</p>
+</div>
+
+<p class="page-label">Лист 1 — термины (лицевая сторона)</p>
+<div class="grid">
+  <div class="cell term">наука</div>
+  <div class="cell term">псевдонаука (лженаука)</div>
+  <div class="cell term">естествоиспытатель</div>
+  <div class="cell term">естественные науки</div>
+  <div class="cell term">общественные и гуманитарные науки</div>
+  <div class="cell term">технические науки</div>
+  <div class="cell term">познавательная функция</div>
+</div>
+
+<p class="page-label">Лист 2 — определения (обратная сторона, тот же порядок ячеек)</p>
+<div class="grid">
+  <div class="cell def">Сфера человеческой деятельности, направленная на выработку и систематизацию знаний о мире.</div>
+  <div class="cell def">Деятельность, изображающая научную, но ею не являющаяся.</div>
+  <div class="cell def">Учёный, занимающийся сбором первичных данных о природе.</div>
+  <div class="cell def">Науки о природе: биология, география, астрономия, физика, химия и др.</div>
+  <div class="cell def">Науки о человеке и обществе: история, психология, лингвистика и др.</div>
+  <div class="cell def">Науки о технике и её применении: информатика, архитектура, механика и др.</div>
+  <div class="cell def">Главная функция науки — познание природы, человека и общества.</div>
+</div>
+
+</body>
+</html>
