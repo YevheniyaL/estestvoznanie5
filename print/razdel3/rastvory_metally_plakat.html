@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Растворы и металлы</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --surface-2: #e8eef0;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #2a6f9e;
+    --accent-soft: #dcebf5;
+    --steel: #6b7280;
+    --steel-soft: #e7e9ec;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(42, 111, 158, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d151c;
+      --surface: #16212b;
+      --surface-2: #1b2833;
+      --ink: #e8f0f5;
+      --muted: #94a8b8;
+      --accent: #5fa8d9;
+      --accent-soft: #17303f;
+      --steel: #aab2bc;
+      --steel-soft: #232a31;
+      --border: rgba(255, 255, 255, 0.14);
+      --grid-line: rgba(95, 168, 217, 0.09);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0d151c;
+    --surface: #16212b;
+    --surface-2: #1b2833;
+    --ink: #e8f0f5;
+    --muted: #94a8b8;
+    --accent: #5fa8d9;
+    --accent-soft: #17303f;
+    --steel: #aab2bc;
+    --steel-soft: #232a31;
+    --border: rgba(255, 255, 255, 0.14);
+    --grid-line: rgba(95, 168, 217, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 26px 26px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 48px 20px 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet { width: 100%; max-width: 960px; display: flex; flex-direction: column; gap: 38px; }
+
+  header.top {
+    display: flex; flex-direction: column; gap: 6px;
+    padding-bottom: 20px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 2.9rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 1rem; max-width: 62ch; line-height: 1.5; }
+
+  section { display: flex; flex-direction: column; gap: 16px; }
+  .section-title {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: "Newsreader", Georgia, serif; font-size: 1.5rem; font-weight: 600;
+  }
+  .section-num {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 999px; padding: 2px 10px; font-weight: 600;
+  }
+
+  /* ---- Раствор anatomy ---- */
+  .solution-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 0.95rem; }
+  .solution-row .part { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; }
+  .solution-row .plus, .solution-row .eq { color: var(--accent); font-weight: 700; }
+
+  .formula-box {
+    background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 12px;
+    padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .formula-box .label { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; }
+  .formula-box .expr { font-family: "IBM Plex Mono", monospace; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+  .formula-box p { margin: 0; font-size: 0.86rem; color: var(--muted); }
+
+  /* ---- Насыщенность ---- */
+  .saturation { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .sat-card b { font-size: 0.92rem; color: var(--accent); }
+  .sat-card p { margin: 0; font-size: 0.83rem; color: var(--muted); line-height: 1.4; }
+
+  /* ---- Металлы vs неметаллы ---- */
+  .metal-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .metal-card { border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .metal-card.metals { background: var(--steel-soft); border: 1px solid var(--steel); }
+  .metal-card.nonmetals { background: var(--accent-soft); border: 1px solid var(--accent); }
+  .metal-card h3 { margin: 0; font-size: 1.05rem; }
+  .metal-card.metals h3 { color: var(--steel); }
+  .metal-card.nonmetals h3 { color: var(--accent); }
+  .metal-card ul { margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--ink); line-height: 1.6; }
+  .metal-card .examples { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--muted); }
+  .exception-note {
+    grid-column: 1 / -1;
+    font-size: 0.82rem; color: var(--muted); font-style: italic;
+  }
+
+  .conductors { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 0.88rem; }
+  .conductors .chip { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; font-family: "IBM Plex Mono", monospace; }
+  .conductors .arrow { color: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.8rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+
+  @media (max-width: 700px) {
+    .saturation { grid-template-columns: 1fr; }
+    .metal-split { grid-template-columns: 1fr; }
+  }
+
+  /* --- print: guarantee visible borders/text on plain white paper,
+     regardless of the on-screen theme (light/dark) the page was viewed in --- */
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important;
+      --surface: #ffffff !important;
+      --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important;
+      --muted: #45525e !important;
+      --border: #93a0ab !important;
+    }
+    @page { size: A4; margin: 12mm; }
+    body {
+      background: #ffffff !important;
+      padding: 0 !important;
+    }
+    .sheet { max-width: none; padding: 0; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+    /* keep cards/rows from being sliced across a page break */
+    .kind-card, .eq-card, .hyp-card, .sphere-card, .weather-card, .tl-card,
+    .method-card, .state-card, .split-card, .fn-pill, .step, .era-row,
+    .tl-row, .rung, .role-card, .pigment-chip, .sat-card, .metal-card,
+    .formula-box, .bigbang, .life-hyp, .mountain-note, .diffusion-note,
+    .kingdom-card, section {
+      break-inside: avoid;
+    }
+    /* connecting lines in flow/timeline diagrams use --accent at low
+       opacity for a subtle screen look; bump it up so it still reads once
+       everything else is forced to full-contrast print colors */
+    .connector, .era-connector, .tl-connector, .rung-connector {
+      opacity: 0.75 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · Раздел 3</span>
+    <h1>Растворы и металлы</h1>
+    <p class="subhead">Из чего состоит раствор, как посчитать долю вещества в нём и чем металлы отличаются от неметаллов. §25–29, стр. 135–155.</p>
+  </header>
+
+  <section>
+    <div class="section-title"><span class="section-num">§25</span> Что такое раствор</div>
+    <div class="solution-row">
+      <span class="part">Растворитель <br><small>чаще всего вода</small></span>
+      <span class="plus">+</span>
+      <span class="part">Растворённое вещество</span>
+      <span class="eq">=</span>
+      <span class="part">Раствор <br><small>нет границы раздела</small></span>
+    </div>
+    <p style="margin:0; font-size:0.86rem; color:var(--muted);">Если границу раздела видно (мутная смесь) — это не раствор, а <b>взвесь</b> (например, глина в воде).</p>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§26</span> Массовая доля вещества</div>
+    <div class="formula-box">
+      <span class="label">Формула</span>
+      <div class="expr">Массовая доля (%) = (масса вещества / масса раствора) × 100%</div>
+      <p>Пример: 30 г уксусной кислоты в 100 г раствора → массовая доля 30%.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§28</span> Насыщенность раствора</div>
+    <div class="saturation">
+      <div class="sat-card"><b>Ненасыщенный</b><p>Вещество продолжает растворяться — раствор «принимает» ещё.</p></div>
+      <div class="sat-card"><b>Насыщенный</b><p>При данной температуре вещество больше не растворяется, осадок остаётся на дне.</p></div>
+      <div class="sat-card"><b>Перенасыщенный</b><p>Вещества растворено больше, чем в насыщенном растворе при тех же условиях.</p></div>
+    </div>
+    <p style="margin:0; font-size:0.85rem; color:var(--muted);"><b>Растворимость</b> — максимальная масса вещества, растворимая в 100 г растворителя при данной температуре; зависит от природы растворителя и температуры.</p>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§29</span> Металлы и неметаллы</div>
+    <div class="metal-split">
+      <div class="metal-card metals">
+        <h3>Металлы</h3>
+        <ul>
+          <li>Ковкость, пластичность, тягучесть</li>
+          <li>Металлический блеск</li>
+          <li>Тепло- и электропроводность</li>
+          <li>В обычном состоянии твёрдые</li>
+        </ul>
+        <span class="examples">алюминий · золото · серебро · медь</span>
+      </div>
+      <div class="metal-card nonmetals">
+        <h3>Неметаллы</h3>
+        <ul>
+          <li>Не обладают физическими свойствами металлов</li>
+          <li>Твёрдые, жидкие или газообразные</li>
+          <li>Обычно не проводят электричество</li>
+        </ul>
+        <span class="examples">углерод · гелий · сера · йод</span>
+      </div>
+      <p class="exception-note">Исключения: <b>ртуть</b> — единственный жидкий металл; <b>графит и кремний</b> — неметаллы, проводящие ток; <b>графит и кристаллический йод</b> — неметаллы с металлическим блеском.</p>
+    </div>
+    <div class="conductors">
+      <span style="font-size:0.82rem;color:var(--muted);">Лучшие проводники тока:</span>
+      <span class="chip">серебро</span><span class="arrow">›</span>
+      <span class="chip">медь</span><span class="arrow">›</span>
+      <span class="chip">золото</span><span class="arrow">›</span>
+      <span class="chip">алюминий</span>
+    </div>
+  </section>
+
+  <footer>
+    Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §25–29, стр. 135–155
+  </footer>
+</div>
+</body>
+</html>

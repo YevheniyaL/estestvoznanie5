@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вещества: состояния и смеси</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --surface-2: #e8eef0;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #3a7d5c;
+    --accent-soft: #dcefe2;
+    --warm: #b5872b;
+    --warm-soft: #f3ecd6;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(58, 125, 92, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1712;
+      --surface: #17221b;
+      --surface-2: #1c281f;
+      --ink: #e9f2ec;
+      --muted: #9db3a6;
+      --accent: #6fc79a;
+      --accent-soft: #1c3527;
+      --warm: #e2b768;
+      --warm-soft: #382d18;
+      --border: rgba(255, 255, 255, 0.14);
+      --grid-line: rgba(111, 199, 154, 0.09);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0e1712;
+    --surface: #17221b;
+    --surface-2: #1c281f;
+    --ink: #e9f2ec;
+    --muted: #9db3a6;
+    --accent: #6fc79a;
+    --accent-soft: #1c3527;
+    --warm: #e2b768;
+    --warm-soft: #382d18;
+    --border: rgba(255, 255, 255, 0.14);
+    --grid-line: rgba(111, 199, 154, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 30px 30px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 30px 30px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 48px 20px 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet { width: 100%; max-width: 960px; display: flex; flex-direction: column; gap: 38px; }
+
+  header.top {
+    display: flex; flex-direction: column; gap: 6px;
+    padding-bottom: 20px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 2.9rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 1rem; max-width: 62ch; line-height: 1.5; }
+
+  section { display: flex; flex-direction: column; gap: 16px; }
+  .section-title {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: "Newsreader", Georgia, serif; font-size: 1.5rem; font-weight: 600;
+  }
+  .section-num {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 999px; padding: 2px 10px; font-weight: 600;
+  }
+
+  /* ---- Агрегатные состояния ---- */
+  .states { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .state-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .state-card h3 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--accent); }
+  .state-card p { margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+  .particles { width: 100%; height: 70px; }
+
+  .diffusion-note {
+    background: var(--accent-soft); border-left: 3px solid var(--accent);
+    border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; color: var(--ink);
+  }
+  .diffusion-note b { color: var(--accent); }
+
+  /* ---- Чистое вещество vs смесь ---- */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .split-card {
+    border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .split-card.pure { background: var(--accent-soft); border: 1px solid var(--accent); }
+  .split-card.mix { background: var(--warm-soft); border: 1px solid var(--warm); }
+  .split-card h3 { margin: 0; font-size: 1rem; }
+  .split-card.pure h3 { color: var(--accent); }
+  .split-card.mix h3 { color: var(--warm); }
+  .split-card p { margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+  .split-card .examples { font-size: 0.8rem; font-family: "IBM Plex Mono", monospace; color: var(--ink); }
+
+  /* ---- Способы разделения ---- */
+  .methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .method-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .method-card b { font-size: 0.92rem; }
+  .method-card .basis { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); }
+  .method-card p { margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.8rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+
+  @media (max-width: 700px) {
+    .states, .methods { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; }
+  }
+
+  /* --- print: guarantee visible borders/text on plain white paper,
+     regardless of the on-screen theme (light/dark) the page was viewed in --- */
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important;
+      --surface: #ffffff !important;
+      --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important;
+      --muted: #45525e !important;
+      --border: #93a0ab !important;
+    }
+    @page { size: A4; margin: 12mm; }
+    body {
+      background: #ffffff !important;
+      padding: 0 !important;
+    }
+    .sheet { max-width: none; padding: 0; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+    /* keep cards/rows from being sliced across a page break */
+    .kind-card, .eq-card, .hyp-card, .sphere-card, .weather-card, .tl-card,
+    .method-card, .state-card, .split-card, .fn-pill, .step, .era-row,
+    .tl-row, .rung, .role-card, .pigment-chip, .sat-card, .metal-card,
+    .formula-box, .bigbang, .life-hyp, .mountain-note, .diffusion-note,
+    .kingdom-card, section {
+      break-inside: avoid;
+    }
+    /* connecting lines in flow/timeline diagrams use --accent at low
+       opacity for a subtle screen look; bump it up so it still reads once
+       everything else is forced to full-contrast print colors */
+    .connector, .era-connector, .tl-connector, .rung-connector {
+      opacity: 0.75 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · Раздел 3</span>
+    <h1>Вещества: состояния и смеси</h1>
+    <p class="subhead">Как расположены частицы в твёрдом, жидком и газообразном веществе, чем смесь отличается от чистого вещества и как её разделить на части. §17–23, стр. 98–133.</p>
+  </header>
+
+  <section>
+    <div class="section-title"><span class="section-num">§18</span> Три агрегатных состояния</div>
+    <div class="states">
+      <div class="state-card">
+        <svg class="particles" viewBox="0 0 120 60"><g fill="var(--accent)">
+          <circle cx="20" cy="15" r="5"/><circle cx="40" cy="15" r="5"/><circle cx="60" cy="15" r="5"/><circle cx="80" cy="15" r="5"/><circle cx="100" cy="15" r="5"/>
+          <circle cx="20" cy="35" r="5"/><circle cx="40" cy="35" r="5"/><circle cx="60" cy="35" r="5"/><circle cx="80" cy="35" r="5"/><circle cx="100" cy="35" r="5"/>
+          <circle cx="20" cy="55" r="5"/><circle cx="40" cy="55" r="5"/><circle cx="60" cy="55" r="5"/><circle cx="80" cy="55" r="5"/><circle cx="100" cy="55" r="5"/>
+        </g></svg>
+        <h3>Твёрдое</h3>
+        <p>Частицы близко и в строгом порядке, сильно притягиваются, почти не двигаются — форма и объём сохраняются.</p>
+      </div>
+      <div class="state-card">
+        <svg class="particles" viewBox="0 0 120 60"><g fill="var(--accent)">
+          <circle cx="22" cy="18" r="5"/><circle cx="45" cy="12" r="5"/><circle cx="68" cy="22" r="5"/><circle cx="92" cy="14" r="5"/>
+          <circle cx="15" cy="38" r="5"/><circle cx="38" cy="42" r="5"/><circle cx="62" cy="36" r="5"/><circle cx="85" cy="44" r="5"/><circle cx="105" cy="34" r="5"/>
+          <circle cx="28" cy="55" r="5"/><circle cx="55" cy="52" r="5"/><circle cx="78" cy="56" r="5"/>
+        </g></svg>
+        <h3>Жидкое</h3>
+        <p>Частицы плотно, но беспорядочно расположены — объём сохраняется, а форма принимает форму сосуда.</p>
+      </div>
+      <div class="state-card">
+        <svg class="particles" viewBox="0 0 120 60"><g fill="var(--accent)">
+          <circle cx="10" cy="10" r="4"/><circle cx="55" cy="6" r="4"/><circle cx="100" cy="15" r="4"/>
+          <circle cx="30" cy="30" r="4"/><circle cx="80" cy="35" r="4"/><circle cx="8" cy="45" r="4"/>
+          <circle cx="60" cy="50" r="4"/><circle cx="105" cy="50" r="4"/><circle cx="40" cy="55" r="4"/>
+        </g></svg>
+        <h3>Газообразное</h3>
+        <p>Расстояния в десятки раз больше размеров частиц, притяжение слабое — ни формы, ни объёма нет.</p>
+      </div>
+    </div>
+    <div class="diffusion-note">
+      <b>§17 Диффузия</b> — самопроизвольное проникновение частиц одного вещества в другое. Чем выше температура, тем быстрее диффузия. Скорость: <b>газы</b> &gt; <b>жидкости</b> &gt; <b>твёрдые тела</b>.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§22</span> Чистое вещество и смесь</div>
+    <div class="split">
+      <div class="split-card pure">
+        <h3>Чистое вещество</h3>
+        <p>Состоит из частиц одного вещества, свойства постоянны (чистая вода кипит при 100°C и замерзает при 0°C).</p>
+        <span class="examples">золото · чистый мел · дистиллированная вода</span>
+      </div>
+      <div class="split-card mix">
+        <h3>Смесь</h3>
+        <p>Два и больше веществ вместе. В природе и быту почти всё, с чем мы имеем дело, — смеси.</p>
+        <span class="examples">воздух · молоко · гранит · сок · шоколад</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§23</span> Пять способов разделить смесь</div>
+    <div class="methods">
+      <div class="method-card"><span class="basis">разница в плотности</span><b>Отстаивание</b><p>Компоненты расслаиваются: мякоть сока оседает, жир — всплывает.</p></div>
+      <div class="method-card"><span class="basis">размер частиц</span><b>Просеивание</b><p>Мелкие частицы проходят сквозь сито, крупные остаются.</p></div>
+      <div class="method-card"><span class="basis">размер частиц</span><b>Фильтрование</b><p>Жидкость проходит через фильтр, твёрдые частицы задерживаются.</p></div>
+      <div class="method-card"><span class="basis">температура кипения</span><b>Выпаривание</b><p>Жидкий компонент испаряется при нагревании, твёрдый остаётся.</p></div>
+      <div class="method-card"><span class="basis">магнитные свойства</span><b>Намагничивание</b><p>Магнит вытягивает вещество, реагирующее на него.</p></div>
+      <div class="method-card"><span class="basis">температура затвердевания</span><b>Вымораживание</b><p>Компонент с более высокой температурой затвердевания замерзает первым.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §17–23, стр. 98–133
+  </footer>
+</div>
+</body>
+</html>

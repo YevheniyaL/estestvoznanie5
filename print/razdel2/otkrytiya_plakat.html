@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как открывали мир</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #1f6f8b;
+    --accent-soft: #d9eaef;
+    --gold: #b5872b;
+    --gold-soft: #f3ecd6;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(31, 111, 139, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821;
+      --surface: #16232f;
+      --ink: #eaf1f5;
+      --muted: #93a8b8;
+      --accent: #5cb8cc;
+      --accent-soft: #1d3a44;
+      --gold: #e2b768;
+      --gold-soft: #382d18;
+      --border: rgba(255, 255, 255, 0.14);
+      --grid-line: rgba(92, 184, 204, 0.09);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0d1821;
+    --surface: #16232f;
+    --ink: #eaf1f5;
+    --muted: #93a8b8;
+    --accent: #5cb8cc;
+    --accent-soft: #1d3a44;
+    --gold: #e2b768;
+    --gold-soft: #382d18;
+    --border: rgba(255, 255, 255, 0.14);
+    --grid-line: rgba(92, 184, 204, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 48px 20px 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet { width: 100%; max-width: 880px; display: flex; flex-direction: column; gap: 30px; }
+
+  header.top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 2.9rem);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 1rem; max-width: 62ch; line-height: 1.5; }
+
+  .legend-note {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+  }
+  .legend-note span.dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  .dot.sea { background: var(--accent); }
+  .dot.land { background: var(--gold); }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .tl-row {
+    display: grid;
+    grid-template-columns: 108px 26px 1fr;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .tl-year {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: right;
+    padding-top: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  .tl-node-col { display: flex; flex-direction: column; align-items: center; }
+  .tl-node {
+    width: 16px; height: 16px; border-radius: 50%;
+    margin-top: 8px; flex-shrink: 0; border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .tl-node.sea { background: var(--accent); }
+  .tl-node.land { background: var(--gold); }
+  .tl-connector { width: 2px; flex: 1; background: var(--border); min-height: 26px; }
+
+  .tl-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+  }
+  .tl-card h4 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; }
+  .tl-card p { margin: 0; font-size: 0.86rem; color: var(--muted); line-height: 1.45; }
+  .tl-card .tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  .tag.sea { background: var(--accent-soft); color: var(--accent); }
+  .tag.land { background: var(--gold-soft); color: var(--gold); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+  }
+
+  @media (max-width: 560px) {
+    .tl-row { grid-template-columns: 70px 20px 1fr; }
+    .tl-year { font-size: 0.72rem; }
+  }
+
+  /* --- print: guarantee visible borders/text on plain white paper,
+     regardless of the on-screen theme (light/dark) the page was viewed in --- */
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important;
+      --surface: #ffffff !important;
+      --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important;
+      --muted: #45525e !important;
+      --border: #93a0ab !important;
+    }
+    @page { size: A4; margin: 12mm; }
+    body {
+      background: #ffffff !important;
+      padding: 0 !important;
+    }
+    .sheet { max-width: none; padding: 0; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+    /* keep cards/rows from being sliced across a page break */
+    .kind-card, .eq-card, .hyp-card, .sphere-card, .weather-card, .tl-card,
+    .method-card, .state-card, .split-card, .fn-pill, .step, .era-row,
+    .tl-row, .rung, .role-card, .pigment-chip, .sat-card, .metal-card,
+    .formula-box, .bigbang, .life-hyp, .mountain-note, .diffusion-note,
+    .kingdom-card, section {
+      break-inside: avoid;
+    }
+    /* connecting lines in flow/timeline diagrams use --accent at low
+       opacity for a subtle screen look; bump it up so it still reads once
+       everything else is forced to full-contrast print colors */
+    .connector, .era-connector, .tl-connector, .rung-connector {
+      opacity: 0.75 !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · Раздел 2</span>
+    <h1>Как открывали мир</h1>
+    <p class="subhead">От первых греческих путешественников до последнего открытого материка — хронология географических открытий. §13–14, стр. 70–86.</p>
+  </header>
+
+  <div class="legend-note">
+    <span><span class="dot sea"></span>морские пути</span>
+    <span><span class="dot land"></span>внутренние земли и полюса</span>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-year">V в. до н.э.</div>
+      <div class="tl-node-col"><div class="tl-node land"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Геродот</h4>
+        <p>Описал историю и быт народов, Каспийское море и земли к востоку от него. Эратосфен вычислил размеры Земли и стал «отцом географии».</p>
+        <span class="tag land">суша</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">до н.э.</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Финикийцы</h4>
+        <p>По приказу фараона Нехо II обогнули Африку на парусных кораблях — путь занял почти три года.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">X век</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Викинги</h4>
+        <p>Заселили Скандинавию и Исландию, открыли Гренландию.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1271–1295</div>
+      <div class="tl-node-col"><div class="tl-node land"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Марко Поло</h4>
+        <p>Путешествие из Венеции в Китай, служба секретарём при китайском императоре.</p>
+        <span class="tag land">суша</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1466–1469</div>
+      <div class="tl-node-col"><div class="tl-node land"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Афанасий Никитин</h4>
+        <p>Путешествие в Индию — книга «Хождение за три моря».</p>
+        <span class="tag land">суша</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1487</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Бартоломеу Диаш</h4>
+        <p>Первым из европейцев обогнул южную оконечность Африки в поисках морского пути в Индию.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1492</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Христофор Колумб</h4>
+        <p>Открыл Америку, считая, что достиг Индии. Америго Веспуччи позже доказал: это новый континент — назван в его честь.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1498</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Васко да Гама</h4>
+        <p>Обогнул мыс Доброй Надежды и открыл морской путь из Европы в Индию.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1519–1521</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Фернан Магеллан</h4>
+        <p>Первое кругосветное путешествие. Открыл пролив и «Огненную Землю», назвал Тихий океан. Погиб на Филиппинах.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">XVI–XVII вв.</div>
+      <div class="tl-node-col"><div class="tl-node land"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Русские землепроходцы и Витус Беринг</h4>
+        <p>Пересекли Сибирь от Оби до Тихого океана. «Великая Северная экспедиция» Беринга открыла путь к Аляске.</p>
+        <span class="tag land">суша</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1642</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Абель Тасман</h4>
+        <p>Доказал существование южного материка — будущей Австралии.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">XVIII век</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Джеймс Кук</h4>
+        <p>Исследовал восточное побережье Австралии, открыл Большой Барьерный риф.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">XIX век</div>
+      <div class="tl-node-col"><div class="tl-node land"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Гумбольдт, Ливингстон, Пржевальский, Семенов-Тян-Шанский</h4>
+        <p>Исследовали внутренние земли материков: Южную Америку, Южную Африку (водопад Виктория), Центральную Азию и Тянь-Шань.</p>
+        <span class="tag land">суша</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1820</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div><div class="tl-connector"></div></div>
+      <div class="tl-card">
+        <h4>Беллинсгаузен и Лазарев</h4>
+        <p>28 января 1820 года открыли Антарктиду — последний, шестой континент Земли.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-year">1960</div>
+      <div class="tl-node-col"><div class="tl-node sea"></div></div>
+      <div class="tl-card">
+        <h4>Жак Пикар и Дон Уолш</h4>
+        <p>Погрузились на дно Марианской впадины (11 022 м) — самой глубокой точки Мирового океана. Жак Ив Кусто изобрёл акваланг.</p>
+        <span class="tag sea">море</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §13–14, стр. 70–86
+  </footer>
+</div>
+</body>
+</html>
