@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§5. Вывод по результатам</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4; --surface: #ffffff; --surface-2: #e4ebee;
+    --ink: #16263a; --muted: #55697a; --accent: #1f6f8b; --accent-soft: #d9eaef;
+    --warm: #c97a2b; --warm-soft: #f7e6d0; --cold: #3a6bc9; --cold-soft: #dde6f9;
+    --border: rgba(22, 38, 58, 0.14); --grid-line: rgba(31, 111, 139, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+      --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+    --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+    color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 48px 20px 64px; display: flex; justify-content: center;
+  }
+  .sheet { width: 100%; max-width: 860px; display: flex; flex-direction: column; gap: 30px; }
+  header.top {
+    display: flex; flex-direction: column; gap: 6px;
+    padding-bottom: 20px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(1.9rem, 5vw, 2.6rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 1rem; max-width: 62ch; line-height: 1.5; }
+  section { display: flex; flex-direction: column; gap: 16px; }
+  .section-title {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: "Newsreader", Georgia, serif; font-size: 1.4rem; font-weight: 600;
+  }
+  .section-num {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 999px; padding: 2px 10px; font-weight: 600;
+  }
+
+  .principles { display: flex; flex-direction: column; gap: 10px; }
+  .principle-row {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 16px; font-size: 0.9rem; line-height: 1.5;
+  }
+  .principle-row b { color: var(--accent); }
+
+  /* door-gap diagram */
+  .diagram-wrap {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+  }
+  .diagram-wrap svg { flex-shrink: 0; }
+  .diagram-caption { font-size: 0.88rem; color: var(--muted); line-height: 1.5; flex: 1 1 220px; }
+  .diagram-caption b { color: var(--ink); }
+
+  .terms { display: flex; flex-wrap: wrap; gap: 10px; }
+  .term-pill {
+    background: var(--accent-soft); color: var(--ink); border-radius: 8px; padding: 10px 14px;
+    font-size: 0.88rem; font-weight: 600; flex: 1 1 150px; text-align: center;
+  }
+
+  .note {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .note .label {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--accent); font-weight: 600;
+  }
+  .note p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+  .note b { color: var(--ink); }
+  .note.warm { border-color: var(--warm); }
+  .note.warm .label { color: var(--warm); }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.8rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .back-link {
+    font-family: "IBM Plex Sans", sans-serif; font-size: 0.82rem; color: var(--accent);
+    text-decoration: none; align-self: flex-start;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --border: #93a0ab !important;
+    }
+    @page { size: A4; margin: 10mm; }
+    body { background: #ffffff !important; padding: 0 !important; }
+    .sheet { max-width: none; padding: 0; zoom: 0.88; }
+    .back-link { display: none; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .principle-row, .diagram-wrap, .term-pill, .note, section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <a class="back-link" href="../../razdel1/paragraf5.html">← §5 «Как правильно оформить вывод?»</a>
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · Раздел 1</span>
+    <h1>Как правильно оформить вывод по результатам исследования?</h1>
+    <p class="subhead">6-й, последний этап исследования. §5, стр. 28–35.</p>
+  </header>
+
+  <section>
+    <div class="section-title"><span class="section-num">§5</span> Вывод — что это и каким должен быть</div>
+    <div class="principles">
+      <div class="principle-row"><b>Вывод</b> — научное положение, установленное по результатам исследования, не требующее новых доказательств (они уже приведены).</div>
+      <div class="principle-row">Отвечает поставленным задачам.</div>
+      <div class="principle-row">Отражает закономерности, выявленные в ходе работы.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§5</span> Пример из эксперимента параграфа</div>
+    <div class="diagram-wrap">
+      <svg width="180" height="140" viewBox="0 0 180 140">
+        <rect x="10" y="10" width="20" height="120" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <rect x="150" y="10" width="20" height="120" fill="none" stroke="var(--muted)" stroke-width="2"/>
+        <line x1="30" y1="10" x2="150" y2="10" stroke="var(--muted)" stroke-width="2"/>
+        <line x1="30" y1="130" x2="150" y2="130" stroke="var(--muted)" stroke-width="2"/>
+        <line x1="90" y1="10" x2="90" y2="130" stroke="var(--border)" stroke-width="6" stroke-dasharray="2 4"/>
+        <circle cx="90" cy="80" r="4" fill="var(--warm)"/>
+        <rect x="87" y="55" width="6" height="25" fill="var(--warm)"/>
+        <path d="M85 30 Q78 22 84 15 Q90 20 87 30 Q94 24 88 30 Z" fill="var(--warm)"/>
+        <path d="M70 22 C60 18, 55 10, 60 4" stroke="var(--warm)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M110 118 C120 122, 125 128, 122 134" stroke="var(--cold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <text x="55" y="18" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--warm)">тёплый ↑</text>
+        <text x="95" y="128" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--cold)">холодный ↓</text>
+      </svg>
+      <p class="diagram-caption"><b>Тёплый воздух легче холодного и движется вверх</b>, холодный — тяжелее и опускается вниз. Поэтому пламя свечи у щели двери <b>вверху отклоняется в коридор</b>, а <b>внизу — в комнату</b>. Вывод для жизни: обогреватель эффективнее ставить на пол.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§5</span> Расширение — виды воздухоплавания</div>
+    <div class="terms">
+      <div class="term-pill">Воздушный шар</div>
+      <div class="term-pill">Аэростат</div>
+      <div class="term-pill">Дирижабль</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="note warm">
+      <span class="label">Дополнительный эксперимент</span>
+      <p>Солёная вода нагревается и остывает иначе, чем пресная — соль повышает теплоёмкость и влияет на скорость изменения температуры.</p>
+    </div>
+  </section>
+
+  <footer>
+    Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §5, стр. 28–35
+  </footer>
+</div>
+</body>
+</html>
