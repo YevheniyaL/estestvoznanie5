@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§2. Вопрос исследования и план</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --surface-2: #e4ebee;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #1f6f8b;
+    --accent-soft: #d9eaef;
+    --warm: #c97a2b;
+    --warm-soft: #f7e6d0;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(31, 111, 139, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a;
+      --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a;
+    --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 48px 20px 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet { width: 100%; max-width: 860px; display: flex; flex-direction: column; gap: 30px; }
+
+  header.top {
+    display: flex; flex-direction: column; gap: 6px;
+    padding-bottom: 20px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(1.7rem, 4.6vw, 2.4rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 1rem; max-width: 62ch; line-height: 1.5; }
+
+  section { display: flex; flex-direction: column; gap: 16px; }
+  .section-title {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: "Newsreader", Georgia, serif; font-size: 1.4rem; font-weight: 600;
+  }
+  .section-num {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 999px; padding: 2px 10px; font-weight: 600;
+  }
+
+  /* three definition cards: проблема / предмет / объект */
+  .triad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .triad-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .triad-card h3 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--accent); }
+  .triad-card p { margin: 0; font-size: 0.86rem; color: var(--muted); line-height: 1.45; }
+
+  /* 3-step flow: этапы 1-3 */
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .step { display: grid; grid-template-columns: 40px 1fr; gap: 16px; position: relative; }
+  .step .node-col { display: flex; flex-direction: column; align-items: center; }
+  .node {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 0.95rem; flex-shrink: 0; z-index: 1;
+  }
+  .connector { width: 2px; flex: 1; background: var(--accent); opacity: 0.5; min-height: 22px; }
+  .step-body { padding: 8px 0 22px; }
+  .step-body h4 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; }
+  .step-body p { margin: 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+  /* 7-point plan, compact chip row */
+  .plan { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .plan-chip {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; font-weight: 600;
+    background: var(--accent-soft); color: var(--ink); border-radius: 6px; padding: 6px 10px;
+  }
+  .plan-arrow { color: var(--muted); font-size: 0.9rem; }
+
+  .note {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .note .label {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--accent); font-weight: 600;
+  }
+  .note p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+  .note b { color: var(--ink); }
+  .note.warm { border-color: var(--warm); }
+  .note.warm .label { color: var(--warm); }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.8rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .back-link {
+    font-family: "IBM Plex Sans", sans-serif; font-size: 0.82rem; color: var(--accent);
+    text-decoration: none; align-self: flex-start;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  @media (max-width: 620px) { .triad { grid-template-columns: 1fr; } }
+
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --border: #93a0ab !important;
+    }
+    @page { size: A4; margin: 10mm; }
+    body { background: #ffffff !important; padding: 0 !important; }
+    .sheet { max-width: none; padding: 0; zoom: 0.88; }
+    .back-link { display: none; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .triad-card, .step, .note, section { break-inside: avoid; }
+    .connector { opacity: 0.75 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <a class="back-link" href="../../razdel1/paragraf2.html">← §2 «Как сформулировать вопрос исследования и составить план?»</a>
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · Раздел 1</span>
+    <h1>Как сформулировать вопрос исследования и составить план?</h1>
+    <p class="subhead">Первые три этапа научного исследования из шести. §2, стр. 11–16.</p>
+  </header>
+
+  <section>
+    <div class="section-title"><span class="section-num">§2</span> Проблема, предмет, объект</div>
+    <div class="triad">
+      <div class="triad-card">
+        <h3>Проблема</h3>
+        <p>Конкретная задача, которую предстоит решить после эксперимента.</p>
+      </div>
+      <div class="triad-card">
+        <h3>Предмет</h3>
+        <p>Конкретная особенность, факт или явление, которые нужно изучить, чтобы решить проблему.</p>
+      </div>
+      <div class="triad-card">
+        <h3>Объект</h3>
+        <p>То, что изучается: люди, группы, физические объекты и т. д.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§2</span> Этапы 1–3 исследования</div>
+    <div class="flow">
+      <div class="step">
+        <div class="node-col"><div class="node">1</div><div class="connector"></div></div>
+        <div class="step-body">
+          <h4>Определение проблемы, предмета и объекта</h4>
+          <p>С них начинается любое исследование — см. три карточки выше.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="node-col"><div class="node">2</div><div class="connector"></div></div>
+        <div class="step-body">
+          <h4>Изучение литературы и формулировка темы</h4>
+          <p>Узнаём, что уже известно науке по этому вопросу, уточняем понятия, формулируем тему работы.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="node-col"><div class="node">3</div></div>
+        <div class="step-body">
+          <h4>Цель, гипотеза, задачи</h4>
+          <p><b>Цель</b> — изучение и решение вопроса, составляющего проблему. <b>Гипотеза</b> — предположение по формуле «Если…, то…», доказывается или опровергается проверкой. <b>Задачи</b> — конкретные шаги, проверяющие гипотезу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="section-num">§2</span> План исследования — 7 пунктов</div>
+    <div class="plan">
+      <span class="plan-chip">проблема</span><span class="plan-arrow">→</span>
+      <span class="plan-chip">предмет и объект</span><span class="plan-arrow">→</span>
+      <span class="plan-chip">источники информации</span><span class="plan-arrow">→</span>
+      <span class="plan-chip">тема</span><span class="plan-arrow">→</span>
+      <span class="plan-chip">цель</span><span class="plan-arrow">→</span>
+      <span class="plan-chip">гипотеза</span><span class="plan-arrow">→</span>
+      <span class="plan-chip">задачи</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="note">
+      <span class="label">Термин</span>
+      <p><b>Социологический опрос</b> — метод сбора информации через вопросы к группе людей (респондентам); проводит интервьюер.</p>
+    </div>
+    <div class="note warm">
+      <span class="label">Расширение</span>
+      <p>Пример из учебника — микроисследование «в чём моё сходство с одноклассниками». На каждом исследовательском уроке — напоминание о технике безопасности.</p>
+    </div>
+  </section>
+
+  <footer>
+    Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §2, стр. 11–16
+  </footer>
+</div>
+</body>
+</html>
