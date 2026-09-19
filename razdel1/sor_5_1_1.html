@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>СОР 5.1.1 — раздел 5.1A «Мир науки»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf9f4; --paper-raised: #ffffff; --rule: #b9cfe0; --rule-soft: #dbe8f1;
+    --margin: #2f6690; --margin-soft: #c7dbea; --ink: #24304a; --ink-soft: #647089; --ink-faint: #97a2b8;
+    --good: #3c8a5c; --good-bg: #dff1e5; --bad: #c85a4f; --bad-bg: #fbe4e1;
+    --mark: #2f9e8f; --mark-bg: #d7f0ec; --shadow: rgba(36, 48, 74, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1b2431; --paper-raised: #232f3f; --rule: #3c5468; --rule-soft: #29394a;
+      --margin: #7fb1de; --margin-soft: #2c3f4f; --ink: #eceff5; --ink-soft: #a7b2c8; --ink-faint: #6d788e;
+      --good: #6fcb93; --good-bg: #23392c; --bad: #e0847a; --bad-bg: #402b2a;
+      --mark: #5fd0bd; --mark-bg: #1f3d38; --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1b2431; --paper-raised: #232f3f; --rule: #3c5468; --rule-soft: #29394a;
+    --margin: #7fb1de; --margin-soft: #2c3f4f; --ink: #eceff5; --ink-soft: #a7b2c8; --ink-faint: #6d788e;
+    --good: #6fcb93; --good-bg: #23392c; --bad: #e0847a; --bad-bg: #402b2a;
+    --mark: #5fd0bd; --mark-bg: #1f3d38; --shadow: rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; line-height: 1.5; -webkit-tap-highlight-color: transparent; }
+  h1, h2, .hand { font-family: 'Caveat', 'Comic Sans MS', cursive; font-weight: 700; text-wrap: balance; }
+  .back-link { font-size: 13px; color: var(--ink-faint); text-decoration: none; }
+  .back-link:hover { color: var(--margin); }
+  .sheet {
+    max-width: 640px; margin: 0 auto; padding: 22px 20px 60px 44px; position: relative;
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent 37px, var(--rule-soft) 38px);
+    background-position: 0 128px;
+  }
+  .sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 26px; width: 2px; background: var(--margin); opacity: 0.75; }
+  header.page { padding-top: 6px; padding-bottom: 14px; }
+  h1 { font-size: 32px; margin: 0 0 2px; color: var(--ink); line-height: 1.15; }
+  .subtitle { font-size: 15px; color: var(--ink-soft); margin: 0 0 10px; }
+  nav.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 20px; }
+  .tab {
+    font-family: 'Caveat', cursive; font-size: 19px; font-weight: 600;
+    background: var(--paper-raised); border: 1px solid var(--rule); border-bottom-width: 3px;
+    color: var(--ink-soft); padding: 7px 16px 6px; border-radius: 8px 8px 4px 4px; cursor: pointer;
+    box-shadow: 1px 2px 0 var(--shadow); transition: transform 0.12s ease;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab:nth-child(1) { transform: rotate(-1.2deg); }
+  .tab:nth-child(2) { transform: rotate(0.8deg); }
+  .tab:nth-child(3) { transform: rotate(-0.6deg); }
+  .tab[aria-selected="true"] { color: var(--paper); background: var(--margin); border-color: var(--margin); }
+  .tab:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--margin); outline-offset: 2px; }
+  section.page { display: none; }
+  section.page.active { display: block; }
+  .lead { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .counter { font-family: 'Caveat', cursive; font-size: 20px; font-weight: 700; color: var(--margin); margin-bottom: 12px; }
+
+  .goal-card {
+    background: var(--paper-raised); border: 1px solid var(--rule); border-left: 4px solid var(--margin);
+    border-radius: 8px; padding: 12px 15px; margin-bottom: 12px; box-shadow: 1px 2px 0 var(--shadow);
+  }
+  .goal-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .goal-code { font-size: 12px; font-weight: 700; color: var(--paper); background: var(--margin); border-radius: 99px; padding: 2px 9px; }
+  .goal-where { font-size: 12px; color: var(--ink-faint); }
+  .goal-card h3 { font-family: 'Caveat', cursive; font-size: 22px; margin: 0; width: 100%; color: var(--ink); }
+  .goal-card p { font-size: 14px; margin: 0 0 4px; }
+  .goal-card ul { margin: 4px 0 0; padding-left: 20px; font-size: 14px; }
+  .goal-card li { margin-bottom: 3px; }
+  .must { font-size: 13px; color: var(--ink-soft); }
+  .print-row { display: flex; flex-direction: column; gap: 8px; margin: 16px 0 4px; }
+  .print-row a {
+    display: block; background: var(--mark-bg); border: 1px solid var(--mark); border-radius: 8px;
+    padding: 10px 14px; text-decoration: none; color: var(--ink); font-size: 14px;
+  }
+  .print-row a b { display: block; font-size: 15px; color: var(--margin); }
+  .print-row a span { font-size: 12.5px; color: var(--ink-soft); }
+
+  .fib-item { margin-bottom: 16px; }
+  .fib-sentence { font-size: 15px; margin-bottom: 6px; }
+  .fib-goal { font-size: 11.5px; color: var(--ink-faint); }
+  .fib-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .fib-row input[type="text"] { font-family: 'PT Sans', sans-serif; font-size: 15px; padding: 6px 9px; border: none; border-bottom: 2px solid var(--ink-faint); background: transparent; color: var(--ink); width: 160px; }
+  .fib-row input[type="text"]:focus { border-bottom-color: var(--margin); }
+  .fib-row input.correct { border-bottom-color: var(--good); color: var(--good); }
+  .fib-row input.incorrect { border-bottom-color: var(--bad); color: var(--bad); }
+  .check-btn { font-family: 'PT Sans', sans-serif; font-size: 13px; background: var(--ink); color: var(--paper); border: none; border-radius: 5px; padding: 6px 12px; cursor: pointer; }
+  .check-btn:hover { opacity: 0.88; }
+  .fib-mark { font-family: 'Caveat', cursive; font-size: 20px; font-weight: 700; min-width: 90px; }
+  .fib-mark.good-mark { color: var(--good); }
+  .fib-mark.bad-mark { color: var(--bad); }
+
+  .tf-item { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--rule); }
+  .tf-statement { font-size: 15px; }
+  .tf-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .tf-btn { font-family: 'PT Sans', sans-serif; font-size: 13px; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 5px; padding: 6px 14px; cursor: pointer; color: var(--ink); }
+  .tf-btn.chosen-good { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .tf-btn.chosen-bad { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  .tf-result { font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; }
+  .tf-result.good-mark { color: var(--good); }
+  .tf-result.bad-mark { color: var(--bad); }
+
+  .reset-line { margin-top: 18px; }
+  .reset-btn { font-family: 'Caveat', cursive; font-size: 16px; background: none; border: none; color: var(--ink-faint); text-decoration: underline; cursor: pointer; padding: 0; }
+  .reset-btn:hover { color: var(--margin); }
+  footer.page { margin-top: 30px; font-size: 12px; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  footer.page a { color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="page">
+    <a class="back-link" href="../index.html">← ко всем параграфам</a>
+    <h1>СОР 5.1.1 — «Мир науки»</h1>
+    <p class="subtitle">Суммативное оценивание за раздел 5.1A · 5 класс · 1 четверть · СОР № 1 · §1–4</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Подготовка к СОР">
+    <button class="tab" role="tab" aria-selected="true" data-target="plan">Что на СОР</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="fib">Проверь себя</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="tf">Верно / неверно</button>
+  </nav>
+
+  <section class="page active" id="plan">
+    <p class="lead">Четыре цели обучения — четыре задания. Для каждой указано, что нужно уметь и где это в учебнике.</p>
+
+    <div class="goal-card">
+      <div class="goal-top"><span class="goal-code">5.1.1.1</span><span class="goal-where">ур. 1 · §1 · стр. 7–8</span>
+        <h3>Определять функции науки</h3></div>
+      <p class="must">Знать наизусть: 4 функции (познавательная — главная, образовательная, культурная, практическая) и 3 вида наук.</p>
+      <ul>
+        <li>«Выяснили, почему…» → познавательная</li>
+        <li>«Создали прибор, лекарство» → практическая</li>
+        <li>«Учебник, урок» → образовательная</li>
+        <li>«Изменились взгляды людей» → культурная</li>
+      </ul>
+    </div>
+
+    <div class="goal-card">
+      <div class="goal-top"><span class="goal-code">5.1.3.1</span><span class="goal-where">ур. 2 · §2 · стр. 11–14</span>
+        <h3>Составлять план исследования</h3></div>
+      <p class="must">Уметь по описанию ситуации написать: проблема → объект и предмет → источники → тема → цель → гипотеза → задачи.</p>
+      <ul>
+        <li>Гипотеза — только в форме «<b>если…, то…</b>»</li>
+        <li>Объект — что изучаем целиком; предмет — какую его сторону</li>
+        <li>Задачи — конкретные шаги, которые проверят гипотезу</li>
+      </ul>
+    </div>
+
+    <div class="goal-card">
+      <div class="goal-top"><span class="goal-code">5.1.4.1</span><span class="goal-where">ур. 3 · §3 · стр. 17–19</span>
+        <h3>Определять параметры в единицах измерений</h3></div>
+      <p class="must">Уметь подобрать прибор и единицу к величине и переводить единицы.</p>
+      <ul>
+        <li>Длина — линейка — мм, см, м, км</li>
+        <li>Масса — весы — мг, г, кг, ц, т</li>
+        <li>Объём — мерный стакан — мл, см³, л</li>
+        <li>Время — секундомер — с, мин, ч · Температура — термометр — °C</li>
+      </ul>
+    </div>
+
+    <div class="goal-card">
+      <div class="goal-top"><span class="goal-code">5.1.5.1</span><span class="goal-where">ур. 4 · §4 · стр. 25</span>
+        <h3>Считать среднее арифметическое и видеть тенденцию</h3></div>
+      <p class="must">СА = (a₁ + a₂ + … + aₙ) : n — сложить и разделить на количество. Пример: (5 + 7 + 6) : 3 = 6 °C.</p>
+      <ul>
+        <li>Тенденция: сравни средние по порядку — возрастает / убывает / не меняется</li>
+        <li>Прогноз — продолжи ту же тенденцию</li>
+        <li>Ответ всегда с единицей измерения</li>
+      </ul>
+    </div>
+
+    <div class="print-row">
+      <a href="../print/razdel1/sor_5_1_1_plakat.html"><b>Плакат-шпаргалка на один лист</b><span>все 4 цели рядом — повесить и смотреть перед СОР</span></a>
+      <a href="../print/razdel1/sor_5_1_1_proverka.html"><b>Тренировочный СОР (22 балла)</b><span>4 задания как на работе + ответы, баллы и шкала для мамы</span></a>
+      <a href="../print/razdel1/sor_5_1_1_kartochki.html"><b>Карточки для печати (12 шт.)</b><span>только то, что надо знать наизусть</span></a>
+    </div>
+  </section>
+
+  <section class="page" id="fib">
+    <p class="lead">Впиши пропущенное слово.</p>
+    <p class="counter" id="fibCounter">Верно: 0 из 0</p>
+    <div id="fibList"></div>
+  </section>
+
+  <section class="page" id="tf">
+    <p class="lead">Отметь, верное утверждение или нет.</p>
+    <p class="counter" id="tfCounter">Верно: 0 из 0</p>
+    <div id="tfList"></div>
+    <div class="reset-line"><button class="reset-btn" id="tfReset">начать заново</button></div>
+  </section>
+
+  <footer class="page">
+    <span>Естествознание 5 · СОР 5.1.1</span>
+    <a href="../print/razdel1/sor_5_1_1_kartochki.html">карточки</a>
+    <a href="../print/razdel1/sor_5_1_1_proverka.html">тренировочный СОР</a>
+    <a href="../print/razdel1/sor_5_1_1_plakat.html">плакат-шпаргалка</a>
+    <a href="paragraf1.html">§1 →</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var FIB = [
+    { goal: "5.1.1.1", text: "Главная функция науки — ___.", answer: "познавательная" },
+    { goal: "5.1.1.1", text: "Функция науки, благодаря которой появляются приборы и технологии, — ___.", answer: "практическая" },
+    { goal: "5.1.1.1", text: "Биология, физика и химия относятся к ___ наукам.", answer: "естественным" },
+    { goal: "5.1.3.1", text: "Предположение, записанное по формуле «если…, то…», называется ___.", answer: "гипотеза" },
+    { goal: "5.1.3.1", text: "То, что изучают целиком, — это ___ исследования.", answer: "объект" },
+    { goal: "5.1.4.1", text: "Массу измеряют прибором, который называется ___.", answer: "весы" },
+    { goal: "5.1.4.1", text: "3 м = ___ см (впиши число).", answer: "300" },
+    { goal: "5.1.5.1", text: "Чтобы найти среднее арифметическое, сумму значений делят на их ___.", answer: "количество" }
+  ];
+
+  var TF = [
+    { text: "Гипотезу формулируют после опыта, по его результатам.", answer: false },
+    { text: "Объём жидкости можно измерить мерным стаканом.", answer: true },
+    { text: "В плане исследования цель идёт раньше гипотезы.", answer: true },
+    { text: "Среднее арифметическое чисел 10, 14 и 12 равно 12.", answer: true },
+    { text: "Если средние значения за три дня 16 °C, 14 °C, 12 °C, то температура возрастает.", answer: false },
+    { text: "Создание лекарства по результатам исследований — это практическая функция науки.", answer: true },
+    { text: "Ответ «25» без единицы измерения считается полным ответом.", answer: false }
+  ];
+
+  var tabs = document.querySelectorAll(".tab");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", "false"); });
+      document.querySelectorAll("section.page").forEach(function (s) { s.classList.remove("active"); });
+      tab.setAttribute("aria-selected", "true");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    });
+  });
+
+  var fibList = document.getElementById("fibList");
+  var fibCounter = document.getElementById("fibCounter");
+  var fibCorrectCount = 0;
+  fibCounter.textContent = "Верно: 0 из " + FIB.length;
+  FIB.forEach(function (s, idx) {
+    var item = document.createElement("div");
+    item.className = "fib-item";
+    item.innerHTML =
+      '<div class="fib-sentence">' + (idx + 1) + '. ' + s.text + ' <span class="fib-goal">(цель ' + s.goal + ')</span></div>' +
+      '<div class="fib-row">' +
+        '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false">' +
+        '<button class="check-btn" type="button">Проверить</button>' +
+        '<span class="fib-mark"></span>' +
+      '</div>';
+    var input = item.querySelector("input");
+    var btn = item.querySelector(".check-btn");
+    var mark = item.querySelector(".fib-mark");
+    var checkedRight = false;
+    function check() {
+      var val = input.value.trim().toLowerCase().replace("ё", "е");
+      var ok = val === s.answer.toLowerCase().replace("ё", "е");
+      input.classList.toggle("correct", ok);
+      input.classList.toggle("incorrect", val.length > 0 && !ok);
+      if (ok) {
+        mark.textContent = "верно!"; mark.className = "fib-mark good-mark";
+        if (!checkedRight) { fibCorrectCount++; checkedRight = true; fibCounter.textContent = "Верно: " + fibCorrectCount + " из " + FIB.length; }
+      } else {
+        mark.textContent = "верный ответ: " + s.answer; mark.className = "fib-mark bad-mark";
+        if (checkedRight) { fibCorrectCount--; checkedRight = false; fibCounter.textContent = "Верно: " + fibCorrectCount + " из " + FIB.length; }
+      }
+    }
+    btn.addEventListener("click", check);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+    fibList.appendChild(item);
+  });
+
+  var tfList = document.getElementById("tfList");
+  var tfCounter = document.getElementById("tfCounter");
+  var tfCorrect = 0;
+  function buildTF() {
+    tfList.innerHTML = ""; tfCorrect = 0;
+    tfCounter.textContent = "Верно: 0 из " + TF.length;
+    TF.forEach(function (s) {
+      var item = document.createElement("div");
+      item.className = "tf-item";
+      item.innerHTML =
+        '<div class="tf-statement">' + s.text + '</div>' +
+        '<div class="tf-buttons">' +
+          '<button class="tf-btn" data-choice="true" type="button">Верно</button>' +
+          '<button class="tf-btn" data-choice="false" type="button">Неверно</button>' +
+          '<span class="tf-result"></span>' +
+        '</div>';
+      var buttons = item.querySelectorAll(".tf-btn");
+      var result = item.querySelector(".tf-result");
+      var answered = false;
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var choice = b.dataset.choice === "true";
+          var ok = choice === s.answer;
+          b.classList.add(ok ? "chosen-good" : "chosen-bad");
+          if (ok) { result.textContent = "верно!"; result.className = "tf-result good-mark"; tfCorrect++; }
+          else { result.textContent = "неверно — правильный ответ: " + (s.answer ? "верно" : "неверно"); result.className = "tf-result bad-mark"; }
+          tfCounter.textContent = "Верно: " + tfCorrect + " из " + TF.length;
+        });
+      });
+      tfList.appendChild(item);
+    });
+  }
+  buildTF();
+  document.getElementById("tfReset").addEventListener("click", buildTF);
+})();
+</script>
+</body>
+</html>

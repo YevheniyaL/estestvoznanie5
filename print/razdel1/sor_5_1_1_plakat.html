@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СОР 5.1.1 — раздел 5.1A «Мир науки»</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --surface-2: #e4ebee;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #1f6f8b;
+    --accent-soft: #d9eaef;
+    --warm: #c97a2b;
+    --warm-soft: #f7e6d0;
+    --bad: #b0453d;
+    --bad-soft: #f6dfdc;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(31, 111, 139, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --bad: #e08a80; --bad-soft: #3a2622;
+      --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --bad: #e08a80; --bad-soft: #3a2622;
+    --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 40px 20px 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet { width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 16px; }
+
+  header.top {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-bottom: 12px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(1.6rem, 4vw, 2.1rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 0.86rem; max-width: 80ch; line-height: 1.45; margin: 0; }
+  .legend {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--muted);
+    display: flex; gap: 14px; flex-wrap: wrap; margin-top: 2px;
+  }
+
+  .goals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .goal {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    border-top: 3px solid var(--accent);
+    padding: 12px 14px 13px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .goal-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .goal-code {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; font-weight: 600;
+    color: #ffffff; background: var(--accent); border-radius: 999px; padding: 2px 9px;
+  }
+  .goal-lesson {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
+  }
+  .goal h2 {
+    font-family: "Newsreader", Georgia, serif; font-size: 1.06rem; font-weight: 600;
+    margin: 0; width: 100%; line-height: 1.25;
+  }
+
+  .rows { display: flex; flex-direction: column; gap: 5px; }
+  .row { font-size: 0.79rem; line-height: 1.35; }
+  .row .k { font-weight: 600; color: var(--accent); }
+  .src { font-size: 0.72rem; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 5px;
+    padding: 5px 8px; font-size: 0.76rem; line-height: 1.25; flex: 1 1 120px;
+  }
+  .chip.extra { background: var(--warm-soft); border-left-color: var(--warm); }
+  .chip b { display: block; font-size: 0.78rem; }
+  .chip span { color: var(--muted); font-size: 0.72rem; }
+
+  .steps { display: flex; flex-wrap: wrap; gap: 4px; align-items: stretch; }
+  .step {
+    background: var(--surface-2); border-radius: 5px; padding: 4px 7px;
+    font-size: 0.73rem; font-weight: 500; display: flex; align-items: center; gap: 4px;
+  }
+  .step i { font-family: "IBM Plex Mono", monospace; font-style: normal; color: var(--accent); font-weight: 600; }
+  .arrow { color: var(--muted); font-size: 0.8rem; align-self: center; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.74rem; }
+  th, td { border: 1px solid var(--border); padding: 3px 6px; text-align: left; }
+  th { background: var(--surface-2); font-weight: 600; font-size: 0.72rem; }
+
+  .formula {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.92rem; font-weight: 600;
+    background: var(--surface-2); border-radius: 6px; padding: 7px 10px; text-align: center;
+  }
+
+  .tip, .trap {
+    border-radius: 7px; padding: 7px 10px; font-size: 0.75rem; line-height: 1.35;
+  }
+  .tip { background: var(--warm-soft); border-left: 3px solid var(--warm); }
+  .trap { background: var(--bad-soft); border-left: 3px solid var(--bad); }
+  .tip .label, .trap .label {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; text-transform: uppercase;
+    letter-spacing: 0.07em; font-weight: 600; display: block; margin-bottom: 2px;
+  }
+  .tip .label { color: var(--warm); }
+  .trap .label { color: var(--bad); }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 10px; font-size: 0.72rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .back-link {
+    font-family: "IBM Plex Sans", sans-serif; font-size: 0.82rem; color: var(--accent);
+    text-decoration: none; align-self: flex-start;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  @media (max-width: 720px) { .goals { grid-template-columns: 1fr; } }
+
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --border: #93a0ab !important;
+    }
+    @page { size: A4; margin: 8mm; }
+    body { background: #ffffff !important; padding: 0 !important; }
+    .sheet { max-width: none; padding: 0; zoom: 0.82; gap: 12px; }
+    .back-link { display: none; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .goal, .chip, .tip, .trap, table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <a class="back-link" href="../../razdel1/sor_5_1_1.html">← страница СОР 5.1.1</a>
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · 1 четверть · СОР № 1</span>
+    <h1>Суммативное оценивание за раздел 5.1A «Мир науки»</h1>
+    <p class="subhead">Четыре цели обучения — четыре блока. Уроки: §1 (стр. 7–8), §2 (стр. 11–14), §3 (стр. 17–19), §4 (стр. 25).</p>
+    <div class="legend"><span>📖 — из учебника</span><span>✏️ — подсказка от мамы, в учебнике этого нет</span></div>
+  </header>
+
+  <div class="goals">
+
+    <!-- ЦЕЛЬ 1 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">5.1.1.1</span>
+        <span class="goal-lesson">ур. 1 · §1 · стр. 7–8</span>
+        <h2>Функции науки</h2>
+      </div>
+      <div class="row src">📖 <b>Наука</b> — сфера человеческой деятельности, направленная на выработку и систематизацию знаний о мире.</div>
+      <div class="chips">
+        <div class="chip"><b>Познавательная</b><span>главная: узнать и объяснить, как устроен мир</span></div>
+        <div class="chip"><b>Образовательная</b><span>научить, передать знания другим</span></div>
+        <div class="chip"><b>Культурная</b><span>меняет взгляды людей, развивает культуру</span></div>
+        <div class="chip"><b>Практическая</b><span>даёт приборы, технологии, лекарства</span></div>
+        <div class="chip extra"><b>+ Управления</b><span>5-я, отдельная: помогает планировать и принимать решения (с XVII в.)</span></div>
+      </div>
+      <div class="row"><span class="k">📖 Три вида наук:</span> естественные (биология, физика, химия, география, астрономия) · общественные и гуманитарные (история, психология, лингвистика) · технические (информатика, механика, архитектура).</div>
+      <div class="tip"><span class="label">✏️ Как узнать функцию в задании</span>
+        «Учёные <b>выяснили</b>, почему…» → познавательная. «<b>Учебник, урок, лекция</b>» → образовательная. «<b>Изменились взгляды</b> людей на мир» → культурная. «<b>Создали прибор</b>, лекарство, машину» → практическая. «<b>Составили план</b>, приняли решение» → управления.</div>
+      <div class="trap"><span class="label">📖 Ловушка</span>
+        <b>Псевдонаука (лженаука)</b> — деятельность, которая только <i>выглядит</i> научной, но ею не является. Это не вид науки и не её функция.</div>
+    </section>
+
+    <!-- ЦЕЛЬ 2 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">5.1.3.1</span>
+        <span class="goal-lesson">ур. 2 · §2 · стр. 11–14</span>
+        <h2>План исследования</h2>
+      </div>
+      <div class="row src">📖 Порядок из 7 шагов — запомнить именно в этом порядке:</div>
+      <div class="steps">
+        <div class="step"><i>1</i>проблема</div><span class="arrow">→</span>
+        <div class="step"><i>2</i>объект и предмет</div><span class="arrow">→</span>
+        <div class="step"><i>3</i>источники информации</div><span class="arrow">→</span>
+        <div class="step"><i>4</i>тема</div><span class="arrow">→</span>
+        <div class="step"><i>5</i>цель</div><span class="arrow">→</span>
+        <div class="step"><i>6</i>гипотеза</div><span class="arrow">→</span>
+        <div class="step"><i>7</i>задачи</div>
+      </div>
+      <div class="rows">
+        <div class="row src">📖 <span class="k">Проблема</span> — задача, которую надо решить после опыта.</div>
+        <div class="row src">📖 <span class="k">Объект</span> — то, что изучаем целиком. <span class="k">Предмет</span> — та самая сторона объекта, которую изучаем.</div>
+        <div class="row src">📖 <span class="k">Цель</span> — что хотим выяснить. <span class="k">Гипотеза</span> — предположение по формуле «<b>Если…, то…</b>». <span class="k">Задачи</span> — шаги, которые проверят гипотезу.</div>
+      </div>
+      <div class="tip"><span class="label">✏️ Готовый образец — подставь свою тему</span>
+        <b>Проблема:</b> от чего зависит длина тени? · <b>Объект:</b> тень предмета · <b>Предмет:</b> зависимость длины тени от высоты лампы · <b>Источники:</b> учебник, опыт · <b>Тема:</b> «Как высота лампы влияет на длину тени» · <b>Цель:</b> выяснить, как меняется длина тени при подъёме лампы · <b>Гипотеза:</b> <i>если</i> поднимать лампу выше, <i>то</i> тень станет короче · <b>Задачи:</b> 1) измерить тень на трёх высотах, 2) занести в таблицу, 3) сравнить и сделать вывод.</div>
+      <div class="trap"><span class="label">✏️ Ловушка</span>
+        Гипотезу без «если… то…» на СОР часто не засчитывают. И гипотеза — это <i>предположение до опыта</i>, а не вывод после него.</div>
+    </section>
+
+    <!-- ЦЕЛЬ 3 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">5.1.4.1</span>
+        <span class="goal-lesson">ур. 3 · §3 · стр. 17–19</span>
+        <h2>Параметры и единицы измерения</h2>
+      </div>
+      <div class="row src">📖 <span class="k">Методы:</span> наблюдение · эксперимент · измерение. <span class="k">Оборудование:</span> лабораторное (колба, пробирка) · увеличительное (лупа, микроскоп, телескоп) · измерительное (сравнивает с эталоном).</div>
+      <table>
+        <tr><th>Параметр</th><th>Прибор 📖</th><th>Единицы 📖</th></tr>
+        <tr><td>Длина</td><td>линейка, рулетка</td><td>мм, см, м, км</td></tr>
+        <tr><td>Масса</td><td>весы</td><td>мг, г, кг, ц, т</td></tr>
+        <tr><td>Объём</td><td>мерный стакан (цилиндр)</td><td>мл, см³, л</td></tr>
+        <tr><td>Время</td><td>секундомер, часы</td><td>с, мин, ч</td></tr>
+        <tr><td>Температура</td><td>термометр</td><td>°C</td></tr>
+      </table>
+      <div class="tip"><span class="label">✏️ Перевод единиц — выучить</span>
+        1 см = 10 мм · 1 м = 100 см · 1 км = 1000 м · 1 кг = 1000 г · 1 ц = 100 кг · 1 т = 1000 кг · 1 л = 1000 мл · 1 л = 1000 см³ (1 мл = 1 см³) · 1 мин = 60 с · 1 ч = 60 мин.</div>
+      <div class="trap"><span class="label">✏️ Ловушка</span>
+        Ответ без единицы измерения — это не ответ. Пиши «<b>6 °C</b>», «<b>25 см</b>», а не просто «6» и «25».</div>
+    </section>
+
+    <!-- ЦЕЛЬ 4 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">5.1.5.1</span>
+        <span class="goal-lesson">ур. 4 · §4 · стр. 25</span>
+        <h2>Среднее арифметическое и тенденция</h2>
+      </div>
+      <div class="formula">СА = (a₁ + a₂ + … + aₙ) : n</div>
+      <div class="row src">📖 <b>Среднее арифметическое</b> — усреднённое значение группы измерений: сложить все значения и разделить на их количество. <i>a</i> — значение измерения, <i>n</i> — сколько их.</div>
+      <div class="row src">📖 <b>Пример:</b> 5 °C, 7 °C, 6 °C → (5 + 7 + 6) : 3 = <b>6 °C</b>.</div>
+      <div class="row src">📖 Одно и то же измеряют <b>несколько раз</b>, чтобы повысить точность и надёжность вывода. Результаты показывают в таблицах, графиках и диаграммах (5-й этап исследования).</div>
+      <div class="tip"><span class="label">✏️ Тенденция — в три шага</span>
+        1) посчитай среднее за каждый день/опыт; 2) сравни их по порядку: больше → больше = <b>возрастает</b>, меньше → меньше = <b>убывает</b>, примерно одинаково = <b>не меняется</b>; 3) прогноз = продолжи ту же тенденцию («если так пойдёт дальше, то…»).</div>
+      <div class="trap"><span class="label">✏️ Ловушка</span>
+        Делить надо на <b>количество измерений</b>, а не на последнее число. И в ответ записывать с единицей — «в среднем 6 °C».</div>
+    </section>
+
+  </div>
+
+  <footer>
+    Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §1–4, стр. 6–27
+  </footer>
+</div>
+</body>
+</html>
