@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · §6 · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4; --surface: #ffffff; --surface-2: #e4ebee;
+    --ink: #16263a; --muted: #55697a; --faint: #8296a6;
+    --accent: #1f6f8b; --accent-soft: #d9eaef;
+    --warm: #c97a2b; --warm-soft: #f7e6d0; --cold: #3a6bc9; --cold-soft: #dde6f9;
+    --border: rgba(22, 38, 58, 0.14);
+    --thread: #3B6E8F; --thread-soft: #DCEAF3;
+    --hl: #fdf0c8;
+    --b1: #1f6f8b; --b2: #3a6bc9; --b3: #4f8a5b; --b4: #c97a2b; --b5: #8a5aa8; --b6: #b0522e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+      --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+      --border: rgba(255, 255, 255, 0.14);
+      --thread: #7FB3D5; --thread-soft: #243542;
+      --hl: #4a3f18;
+      --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+    --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+    --border: rgba(255, 255, 255, 0.14);
+    --thread: #7FB3D5; --thread-soft: #243542;
+    --hl: #4a3f18;
+    --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI Emoji", system-ui, sans-serif; line-height: 1.32;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .sheet { display: flex; flex-direction: column; }
+
+  .top { display: flex; align-items: flex-start; gap: 0.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.35rem; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 0.15rem; }
+  h1 { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.5rem; margin: 0; line-height: 1.15; }
+  .sheet-tag { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm);
+    border: 1px solid var(--warm); border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap; }
+
+  .idea { margin: 0.45rem 0 0; padding: 0.3rem 0.6rem; background: var(--hl); border-radius: 8px; font-size: 0.85rem; }
+  .idea b { font-family: "Newsreader", Georgia, serif; }
+
+  .thread { display: flex; gap: 0.45rem; align-items: baseline; background: var(--thread-soft);
+    border-left: 4px solid var(--thread); border-radius: 8px; padding: 0.3rem 0.65rem;
+    font-size: 0.78rem; line-height: 1.3; color: var(--muted); }
+  .thread .ico { color: var(--thread); font-weight: 700; flex: none; }
+  .thread b { color: var(--thread); }
+  .thread.razdel { margin: 0.4rem 0 0; }
+  .thread.next { margin: 0.5rem 0 0; }
+
+  .words { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; margin: 0.5rem 0 0; }
+  .word { background: var(--accent-soft); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.75rem; line-height: 1.25; }
+  .word b { display: block; font-size: 0.82rem; color: var(--accent); }
+
+  .blk { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--b1);
+    border-radius: 9px; padding: 0.45rem 0.6rem 0.5rem; margin: 0.45rem 0 0; }
+  .blk.b2 { border-left-color: var(--b2); } .blk.b3 { border-left-color: var(--b3); }
+  .blk.b4 { border-left-color: var(--b4); } .blk.b5 { border-left-color: var(--b5); }
+  .blk.b6 { border-left-color: var(--b6); }
+  .blk h2 { font-family: "Newsreader", Georgia, serif; font-size: 1rem; font-weight: 600;
+    margin: 0 0 0.3rem; display: flex; align-items: baseline; gap: 0.4rem; }
+  .num { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600; color: #fff;
+    background: var(--b1); border-radius: 999px; padding: 0.08rem 0.45rem; flex: none; }
+  .b2 .num { background: var(--b2); } .b3 .num { background: var(--b3); }
+  .b4 .num { background: var(--b4); } .b5 .num { background: var(--b5); } .b6 .num { background: var(--b6); }
+  .task { font-family: "IBM Plex Sans", sans-serif; font-size: 0.72rem; font-weight: 400; color: var(--faint); font-style: italic; }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+  .card { background: var(--surface-2); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.78rem; line-height: 1.28; }
+  .card .t { display: block; font-size: 0.68rem; font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.1rem; }
+  .card .size { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.74rem; }
+
+  .flow { display: flex; align-items: stretch; gap: 0.3rem; flex-wrap: wrap; }
+  .flow .node { flex: 1 1 0; min-width: 88px; background: var(--surface-2); border-radius: 8px;
+    padding: 0.3rem 0.4rem; font-size: 0.76rem; font-weight: 600; text-align: center; }
+  .flow .node small { display: block; font-weight: 400; color: var(--muted); font-size: 0.68rem; }
+  .flow .node.here { background: var(--accent-soft); outline: 1.5px solid var(--accent); }
+  .flow .arr { align-self: center; color: var(--accent); font-weight: 700; flex: none; }
+
+  .rows { display: flex; flex-direction: column; gap: 0.25rem; }
+  .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.5rem; font-size: 0.78rem; line-height: 1.28;
+    background: var(--surface-2); border-radius: 7px; padding: 0.25rem 0.45rem; }
+  .row > b { color: var(--accent); }
+  .row span b { color: var(--ink); }
+
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
+  .n { background: var(--surface-2); border-radius: 8px; padding: 0.3rem 0.4rem; text-align: center; }
+  .n .big { display: block; font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; font-weight: 600; color: var(--warm); }
+  .n small { display: block; font-size: 0.67rem; color: var(--muted); line-height: 1.2; }
+
+  .note { margin: 0.3rem 0 0; font-size: 0.76rem; color: var(--muted); line-height: 1.3; }
+  .note b { color: var(--ink); }
+
+  .oral { background: var(--accent-soft); border-radius: 9px; padding: 0.45rem 0.6rem; margin: 0.5rem 0 0; }
+  .oral h2 { font-family: "Newsreader", Georgia, serif; font-size: 0.95rem; margin: 0 0 0.2rem; }
+  .oral ol { margin: 0; padding-left: 1.1rem; font-size: 0.78rem; line-height: 1.32; }
+
+  footer { margin: 0.55rem 0 0; padding-top: 0.35rem; border-top: 1px solid var(--border);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; color: var(--faint); line-height: 1.35; }
+  .back-link { font-size: 0.78rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 0.6rem; }
+
+  @media (max-width: 640px) {
+    .words, .pair, .nums { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 9mm; }
+    body { background: #fff !important; }
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f1f5f7 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --faint: #6b7a88 !important;
+      --border: #9aa7b2 !important;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-shadow: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    .sheet { zoom: 0.95; }
+    .sheet + .sheet { break-before: page; }
+    .back-link { display: none; }
+    .blk, .oral, .thread, .words, .idea { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="sheet">
+
+  <a class="back-link" href="../../index.html">← на главную</a>
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 2 «Вселенная. Земля. Человек» · стр. 36–39</p>
+      <h1>§6. В чём сходства и различия микро- и макромира</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <p class="idea"><b>Главная мысль:</b> всё, что нас окружает, и сам человек собраны из невидимых
+    глазу частиц — макромир, который мы видим, стоит на микромире, как дом на кирпичах. <i>✏️</i></p>
+
+  <p class="thread razdel"><span class="ico">▣</span><span><b>Главная мысль всего раздела (стр. 35–97):</b>
+    от мельчайшей частицы до Вселенной — как устроен мир, как появились Земля и жизнь, как люди
+    научились этот мир описывать (карта, план) и почему все люди разные. <i>✏️</i></span></p>
+
+  <div class="words">
+    <div class="word"><b>Микромир</b>малые объекты: молекулы, атомы, элементарные частицы 📖</div>
+    <div class="word"><b>Макромир</b>объекты больше молекулы, но меньше звёздных систем 📖</div>
+    <div class="word"><b>Бактерии</b>живые существа из одной клетки, видны только в микроскоп ✏️</div>
+    <div class="word"><b>Вирусы</b>мельчайшие возбудители болезней, живут только в чужой клетке ✏️</div>
+  </div>
+
+  <div class="blk b1">
+    <h2><span class="num">1</span>Два мира — два ответа на вопрос «какого размера?»</h2>
+    <div class="pair">
+      <div class="card"><span class="t">Микромир 📖</span>часть материального мира: <b>молекулы, атомы,
+        элементарные частицы</b>. Без специального прибора — <b>микроскопа</b> — их не обнаружить.
+        <span class="size">размер: от 10⁻⁸ до 10⁻¹⁶ см</span></div>
+      <div class="card"><span class="t">Макромир 📖</span>часть материального мира: объекты
+        <b>больше молекулы, но меньше звёздных систем</b>. Главный объект макромира — <b>человек</b>.
+        <span class="size">размеры соизмеримы с человеком, меряют в мм, см, км</span></div>
+    </div>
+    <p class="note">Микромир — <b>основа</b> нашего макромира: всё вокруг и само тело человека не
+      единое целое, а собрано из частей. 📖</p>
+  </div>
+
+  <div class="blk b2">
+    <h2><span class="num">2</span>Лестница вниз: из чего собрано всё <span class="task">✏️ задание 2: расставь от самого маленького</span></h2>
+    <div class="flow">
+      <div class="node here">Элементарная частица<small>самая маленькая</small></div>
+      <span class="arr">→</span>
+      <div class="node">Атом<small>делится на частицы</small></div>
+      <span class="arr">→</span>
+      <div class="node">Молекула<small>делится на атомы</small></div>
+      <span class="arr">→</span>
+      <div class="node">Предмет, тело<small>уже макромир</small></div>
+    </div>
+    <p class="note">Учебник спрашивает только про первые три (молекула, элементарная частица, атом) —
+      порядок <b>частица → атом → молекула</b>. 📖</p>
+  </div>
+
+  <div class="blk b3">
+    <h2><span class="num">3</span>Как понять, куда отнести объект <span class="task">✏️ задание 3: раздели на 2 группы</span></h2>
+    <p class="note" style="margin-top:0"><b>Ключ ✏️:</b> видно глазом или в руки возьмёшь — <b>макромир</b>;
+      нужен микроскоп — <b>микромир</b>.</p>
+    <div class="rows">
+      <div class="row"><b>Микромир</b><span>бифидобактерия · вирус СПИДа · атом <i style="color:var(--faint);font-style:normal">(+ свой пример: молекула воды)</i></span></div>
+      <div class="row"><b>Макромир</b><span>автомобиль · человек · дерево <i style="color:var(--faint);font-style:normal">(+ свой пример: школьный портфель)</i></span></div>
+    </div>
+    <p class="note">Бактерии и вирусы — это <b>микроорганизмы</b>, они относятся к микромиру. 📖</p>
+  </div>
+
+  <footer>
+    Лист 1 из 2 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1,
+    Алматыкітап баспасы, 2019 — §6, стр. 36–39 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+
+<section class="sheet">
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 2 · §6 · стр. 36–39</p>
+      <h1>§6. Микро- и макромир · лист 2</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <div class="blk b4">
+    <h2><span class="num">4</span>Сравнение из учебника: мир — как дом <span class="task">📖 задание 4: почему сравнивают со зданием</span></h2>
+    <div class="flow">
+      <div class="node">Дом<small>целое здание</small></div>
+      <span class="arr">→</span>
+      <div class="node">Кирпичная кладка<small>из чего он сложен</small></div>
+      <span class="arr">→</span>
+      <div class="node here">Кирпич и раствор<small>самые мелкие «части»</small></div>
+    </div>
+    <p class="note">Дом не цельный кусок: разрушится <b>кирпич</b> — рухнет всё строение. Так же и мир:
+      макромир держится на микромире. 📖 <b>Ответ своими словами ✏️:</b> «мир — единое целое, потому
+      что крупное собрано из мелкого и без мелкого не устоит».</p>
+  </div>
+
+  <div class="blk b5">
+    <h2><span class="num">5</span>Соседи по микромиру: бактерии и вирусы</h2>
+    <div class="rows">
+      <div class="row"><b>1892 год 📖</b><span>русский биолог <b>Д.И. Ивановский</b> открыл вирусы и стал основателем науки <b>вирусологии</b></span></div>
+      <div class="row"><b>Вирусология ✏️</b><span>наука, которая изучает вирусы: как они устроены, как вызывают болезни и как с ними бороться</span></div>
+      <div class="row"><b>Бактерии 📖</b><span>описано около <b>10 тысяч видов</b>, а предполагается, что их больше <b>миллиона</b></span></div>
+    </div>
+    <div class="nums" style="margin-top:0.3rem">
+      <div class="n"><span class="big">в 400 раз</span><small>больше бактерий на школьной парте, чем в туалете</small></div>
+      <div class="n"><span class="big">1,8 кг</span><small>весят все бактерии внутри человека</small></div>
+      <div class="n"><span class="big">в 18 раз</span><small>больше бактерий на телефоне, чем на смывной ручке</small></div>
+      <div class="n"><span class="big">&gt; людей</span><small>во рту человека бактерий больше, чем людей на планете</small></div>
+    </div>
+  </div>
+
+  <div class="blk b6">
+    <h2><span class="num">6</span>Ещё дальше вниз и вверх <span class="task">📖 учебник просит найти определения самому</span></h2>
+    <div class="rows">
+      <div class="row"><b>Наномир ✏️</b><span>он же микромикромир: объекты размером в нанометры — миллиардные доли метра, мельче обычного микромира <i style="font-style:normal">(сам термин — из учебника 📖)</i></span></div>
+      <div class="row"><b>Нанотехнологии ✏️</b><span>работа с веществом на уровне отдельных молекул и атомов — из них собирают материалы с нужными свойствами</span></div>
+      <div class="row"><b>Мегамир ✏️</b><span>самый крупный масштаб: звёзды, звёздные системы, галактики, вся Вселенная</span></div>
+    </div>
+    <p class="note">Порядок по размеру ✏️: <b>наномир → микромир → макромир → мегамир</b>.</p>
+  </div>
+
+  <div class="oral">
+    <h2>Ответь устно 📖</h2>
+    <ol>
+      <li>Приведи примеры объектов, которые относятся к макромиру.</li>
+      <li>Расставь по порядку, начиная с самого маленького: молекула, элементарная частица, атом.</li>
+      <li>Раздели на две группы: автомобиль, бифидобактерия, человек, дерево, атом, вирус СПИДа.</li>
+      <li>Почему микро- и макромир сравнивают со зданием? Какую аналогию можешь провести ты?</li>
+      <li>Назови бактерии, полезные для здоровья человека. Где в доме их основные места обитания — назови не меньше двух и объясни почему.</li>
+    </ol>
+  </div>
+
+  <p class="thread next"><span class="ico">↓</span><span><b>Отсюда вытекает:</b> разобрались, из чего
+    собран мир — от частицы до человека. Дальше учебник берёт самый крупный объект вокруг нас и
+    спрашивает, откуда он взялся → <b>§7 «Как произошла планета Земля?»</b></span></p>
+
+  <footer>
+    Лист 2 из 2 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1,
+    Алматыкітап баспасы, 2019 — §6, стр. 36–39 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+</div>
+</body>
+</html>
