@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · §15 · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4; --surface: #ffffff; --surface-2: #e4ebee;
+    --ink: #16263a; --muted: #55697a; --faint: #8296a6;
+    --accent: #1f6f8b; --accent-soft: #d9eaef;
+    --warm: #c97a2b; --warm-soft: #f7e6d0; --cold: #3a6bc9; --cold-soft: #dde6f9;
+    --border: rgba(22, 38, 58, 0.14);
+    --thread: #3B6E8F; --thread-soft: #DCEAF3;
+    --hl: #fdf0c8;
+    --b1: #1f6f8b; --b2: #3a6bc9; --b3: #4f8a5b; --b4: #c97a2b; --b5: #8a5aa8; --b6: #b0522e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+      --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+      --border: rgba(255, 255, 255, 0.14);
+      --thread: #7FB3D5; --thread-soft: #243542;
+      --hl: #4a3f18;
+      --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+    --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+    --border: rgba(255, 255, 255, 0.14);
+    --thread: #7FB3D5; --thread-soft: #243542;
+    --hl: #4a3f18;
+    --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI Emoji", system-ui, sans-serif; line-height: 1.32;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .sheet { display: flex; flex-direction: column; }
+
+  .top { display: flex; align-items: flex-start; gap: 0.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.35rem; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 0.15rem; }
+  h1 { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.5rem; margin: 0; line-height: 1.15; }
+  .sheet-tag { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm);
+    border: 1px solid var(--warm); border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap; }
+
+  .idea { margin: 0.45rem 0 0; padding: 0.3rem 0.6rem; background: var(--hl); border-radius: 8px; font-size: 0.85rem; }
+  .idea b { font-family: "Newsreader", Georgia, serif; }
+
+  .thread { display: flex; gap: 0.45rem; align-items: baseline; background: var(--thread-soft);
+    border-left: 4px solid var(--thread); border-radius: 8px; padding: 0.3rem 0.65rem;
+    font-size: 0.78rem; line-height: 1.3; color: var(--muted); }
+  .thread .ico { color: var(--thread); font-weight: 700; flex: none; }
+  .thread b { color: var(--thread); }
+  .thread.razdel { margin: 0.4rem 0 0; }
+  .thread.next { margin: 0.5rem 0 0; }
+
+  .words { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; margin: 0.5rem 0 0; }
+  .word { background: var(--accent-soft); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.75rem; line-height: 1.25; }
+  .word b { display: block; font-size: 0.82rem; color: var(--accent); }
+
+  .blk { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--b1);
+    border-radius: 9px; padding: 0.45rem 0.6rem 0.5rem; margin: 0.45rem 0 0; }
+  .blk.b2 { border-left-color: var(--b2); } .blk.b3 { border-left-color: var(--b3); }
+  .blk.b4 { border-left-color: var(--b4); } .blk.b5 { border-left-color: var(--b5); }
+  .blk.b6 { border-left-color: var(--b6); }
+  .blk h2 { font-family: "Newsreader", Georgia, serif; font-size: 1rem; font-weight: 600;
+    margin: 0 0 0.3rem; display: flex; align-items: baseline; gap: 0.4rem; }
+  .num { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600; color: #fff;
+    background: var(--b1); border-radius: 999px; padding: 0.08rem 0.45rem; flex: none; }
+  .b2 .num { background: var(--b2); } .b3 .num { background: var(--b3); }
+  .b4 .num { background: var(--b4); } .b5 .num { background: var(--b5); } .b6 .num { background: var(--b6); }
+  .task { font-family: "IBM Plex Sans", sans-serif; font-size: 0.72rem; font-weight: 400; color: var(--faint); font-style: italic; }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+  .card { background: var(--surface-2); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.78rem; line-height: 1.28; }
+  .card .t { display: block; font-size: 0.68rem; font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.1rem; }
+  .card .size { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.74rem; }
+
+  .flow { display: flex; align-items: stretch; gap: 0.3rem; flex-wrap: wrap; }
+  .flow .node { flex: 1 1 0; min-width: 88px; background: var(--surface-2); border-radius: 8px;
+    padding: 0.3rem 0.4rem; font-size: 0.76rem; font-weight: 600; text-align: center; }
+  .flow .node small { display: block; font-weight: 400; color: var(--muted); font-size: 0.68rem; }
+  .flow .node.here { background: var(--accent-soft); outline: 1.5px solid var(--accent); }
+  .flow .arr { align-self: center; color: var(--accent); font-weight: 700; flex: none; }
+
+  .rows { display: flex; flex-direction: column; gap: 0.25rem; }
+  .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.5rem; font-size: 0.78rem; line-height: 1.28;
+    background: var(--surface-2); border-radius: 7px; padding: 0.25rem 0.45rem; }
+  .row > b { color: var(--accent); }
+  .row span b { color: var(--ink); }
+
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
+  .n { background: var(--surface-2); border-radius: 8px; padding: 0.3rem 0.4rem; text-align: center; }
+  .n .big { display: block; font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; font-weight: 600; color: var(--warm); }
+  .n small { display: block; font-size: 0.67rem; color: var(--muted); line-height: 1.2; }
+
+  .note { margin: 0.3rem 0 0; font-size: 0.76rem; color: var(--muted); line-height: 1.3; }
+  .note b { color: var(--ink); }
+
+  .oral { background: var(--accent-soft); border-radius: 9px; padding: 0.45rem 0.6rem; margin: 0.5rem 0 0; }
+  .oral h2 { font-family: "Newsreader", Georgia, serif; font-size: 0.95rem; margin: 0 0 0.2rem; }
+  .oral ol { margin: 0; padding-left: 1.1rem; font-size: 0.78rem; line-height: 1.32; }
+
+  footer { margin: 0.55rem 0 0; padding-top: 0.35rem; border-top: 1px solid var(--border);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; color: var(--faint); line-height: 1.35; }
+  .back-link { font-size: 0.78rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 0.6rem; }
+
+  @media (max-width: 640px) {
+    .words, .pair, .nums { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 9mm; }
+    body { background: #fff !important; }
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f1f5f7 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --faint: #6b7a88 !important;
+      --border: #9aa7b2 !important;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-shadow: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    .sheet { zoom: 0.9; }
+    .sheet + .sheet { break-before: page; }
+    .back-link { display: none; }
+    .blk, .oral, .thread, .words, .idea { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="sheet">
+
+  <a class="back-link" href="../../index.html">← на главную</a>
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 2 «Вселенная. Земля. Человек» · стр. 87–92</p>
+      <h1>§15. Почему все люди разные?</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <p class="idea"><b>Главная мысль:</b> внешние различия людей сложились как приспособление к условиям
+    жизни на разных территориях; по способностям расы равны, и это доказано наукой. <i>✏️</i></p>
+
+  <p class="thread prev"><span class="ico">←</span><span><b>Перед этим (§13–14):</b> карта мира
+    собрана, люди расселились по всем материкам. Теперь вопрос про самих людей — почему они так
+    по-разному выглядят.</span></p>
+
+  <div class="words">
+    <div class="word"><b>Раса</b>большая группа людей с общими наследуемыми внешними признаками 📖</div>
+    <div class="word"><b>Признаки рас</b>кожа, волосы, глаза, форма лица и носа 📖</div>
+    <div class="word"><b>Расизм</b>ложное представление о неравенстве рас 📖</div>
+    <div class="word"><b>Равенство рас</b>все расы одинаковы по развитию 📖</div>
+  </div>
+
+  <div class="blk b1">
+    <h2><span class="num">1</span>Что такое раса 📖</h2>
+    <div class="rows">
+      <div class="row"><b>Определение 📖</b><span>большие группы людей с общими, <b>передаваемыми по наследству</b>
+        внешними признаками; признаки сложились под <b>длительным воздействием условий и территории
+        проживания</b></span></div>
+      <div class="row"><b>Три расы 📖</b><span><b>европеоидная · экваториальная · монголоидная</b></span></div>
+      <div class="row"><b>Термин 📖</b><span>слово «раса» ввёл в науку в <b>1740 году</b> французский естествоиспытатель
+        <b>Жорж Бюффон</b></span></div>
+      <div class="row"><b>Всё человечество ✏️</b><span>все люди Земли вместе называются <b>человечеством</b>,
+        или населением Земли</span></div>
+    </div>
+  </div>
+
+  <div class="blk b2">
+    <h2><span class="num">2</span>Признаки трёх рас <span class="task">📖 задание: заполни таблицу по фотографиям</span></h2>
+    <div class="pair" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="card"><span class="t">Европеоидная ✏️</span>светлая кожа · <b>выступающий нос</b> ·
+        мягкие, часто светлые волосы · светлые глаза, разрез прямой</div>
+      <div class="card"><span class="t">Экваториальная 📖</span><b>тёмная кожа</b> · <b>курчавые волосы</b> ·
+        широкий нос · тёмные глаза</div>
+      <div class="card"><span class="t">Монголоидная 📖</span><b>крупное плоское широкое лицо</b> ·
+        узкий разрез глаз · прямые жёсткие волосы · обширная носовая полость</div>
+    </div>
+    <p class="note">Линии для таблицы учебника: <b>цвет кожи · форма лица · форма носа · цвет волос ·
+      структура волос · цвет глаз · разрез глаз</b>. 📖 Признаки европеоидов в тексте прямо не
+      перечислены — собраны по заданиям учебника ✏️.</p>
+  </div>
+
+  <div class="blk b3">
+    <h2><span class="num">3</span>Откуда взялись эти признаки 📖</h2>
+    <div class="rows">
+      <div class="row"><b>Главный ответ 📖</b><span>расовые признаки <b>наследственны</b>, а в далёком прошлом были
+        <b>полезны</b> — помогали выжить в своих условиях</span></div>
+      <div class="row"><b>Экваториальная 📖</b><span>тёмная кожа и курчавые волосы <b>защищали от солнечных лучей</b></span></div>
+      <div class="row"><b>Монголоидная 📖</b><span>форма лицевого скелета с обширной носовой полостью, возможно,
+        <b>обогревала холодный воздух</b> перед тем, как он попадёт в лёгкие</span></div>
+      <div class="row"><b>Сегодня 📖</b><span>для жизни человека эти особенности <b>большого значения не имеют</b></span></div>
+    </div>
+  </div>
+
+  <footer>
+    Лист 1 из 2 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1,
+    Алматыкітап баспасы, 2019 — §15, стр. 87–92 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+
+<section class="sheet">
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 2 · §15 · стр. 87–92</p>
+      <h1>§15. Почему все люди разные? · лист 2</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <div class="blk b4">
+    <h2><span class="num">4</span>Равенство рас и что такое расизм 📖</h2>
+    <div class="rows">
+      <div class="row"><b>Главное 📖</b><span>по <b>интеллектуальному и физическому развитию все расы одинаковы</b>;
+        различия между обществами связаны <b>с социальными условиями</b>, а не с биологией</span></div>
+      <div class="row"><b>Расизм 📖</b><span>в его основе — <b>понятие о неравенстве</b> людей разных рас: будто одни расы
+        превосходят другие. Это <b>неверно</b></span></div>
+      <div class="row"><b>Пример из учебника 📖</b><span>в США почти всю историю индейцев и чернокожих ставили на низшую
+        ступень, отводя им роль рабов; изменилось лишь <b>во второй половине XX века</b></span></div>
+      <div class="row"><b>Миклухо-Маклай 📖</b><span>прожил <b>2,5 года</b> на северо-восточном берегу <b>Новой Гвинеи</b>
+        среди папуасов; доказал <b>видовое единство и родство человеческих рас</b> и то, что эти народы
+        так же способны к умственному развитию, как любой другой народ</span></div>
+    </div>
+  </div>
+
+  <div class="blk b5">
+    <h2><span class="num">5</span>Казахстан — многонациональная страна 📖</h2>
+    <div class="nums">
+      <div class="n"><span class="big">17 670 579</span><small>человек на 1 января 2016 года</small></div>
+      <div class="n"><span class="big">&gt; 130</span><small>национальностей живут в стране</small></div>
+      <div class="n"><span class="big">2 марта 1992</span><small>Казахстан — член ООН</small></div>
+      <div class="n"><span class="big">1 марта 1995</span><small>создана Ассамблея народа Казахстана</small></div>
+    </div>
+    <div class="rows" style="margin-top:0.3rem">
+      <div class="row"><b>Состав 📖</b><span>коренное население — <b>казахи</b>; русские 20,61% · узбеки 3,11% ·
+        украинцы 1,64% · уйгуры 1,45% · татары 1,15% · немцы 1,1% · другие 4,4%</span></div>
+      <div class="row"><b>Сколько казахов ✏️</b><span>задание учебника: сложить проценты (33,46%) и вычесть из 100 →
+        <b>примерно 66,5%</b></span></div>
+      <div class="row"><b>Что за организации 📖</b><span><b>ООН</b> создана в конце Второй мировой войны; цель — дружеские
+        отношения между народами на основе равноправия. <b>Ассамблея народа Казахстана</b> — орган при
+        Президенте; первая цель — <b>равенство прав и свобод</b> независимо от расы, национальности,
+        языка и религии. С 2016 года 1 марта — <b>День благодарности</b></span></div>
+    </div>
+  </div>
+
+  <div class="blk b6">
+    <h2><span class="num">6</span>Что спросят в итогах раздела <span class="task">📖 §16, стр. 93–97 — обобщающие задания</span></h2>
+    <div class="rows">
+      <div class="row"><b>Этапы исследования ✏️</b><span>правильный порядок: <b>3 → 1 → 5 → 6 → 2 → 4</b> — проблема и
+        предмет → изучение литературы → цель, задачи, гипотеза → методы и сбор материала → обработка
+        результатов → выводы</span></div>
+      <div class="row"><b>Макромир — это…</b><span><b>человек и растение</b> (молекула, атом, частица — микромир)</span></div>
+      <div class="row"><b>Путь в Индию вокруг Африки</b><span><b>Бартоломеу Диаш</b> и <b>Васко да Гама</b></span></div>
+      <div class="row"><b>Изучали Центральную Азию и Казахстан</b><span><b>Пржевальский</b>, <b>Семёнов-Тян-Шанский</b>,
+        <b>Шокан Уалиханов</b> (Гумбольдт — Южная Америка, Беринг — север)</span></div>
+      <div class="row"><b>Признак монголоидной расы</b><span><b>крупное плоское широкое лицо</b></span></div>
+      <div class="row"><b>Расовые признаки сложились под…</b><span><b>природными условиями</b></span></div>
+    </div>
+  </div>
+
+  <div class="oral">
+    <h2>Ответь устно 📖</h2>
+    <ol>
+      <li>Что такое раса? Назови три расы и кто ввёл это слово в науку.</li>
+      <li>Почему у экваториальной расы тёмная кожа, а у монголоидной — особая форма лица?</li>
+      <li>Что означает «расизм» и почему он не имеет научных оснований?</li>
+      <li>Чем известен Миклухо-Маклай и что он доказал?</li>
+      <li>Когда Казахстан вступил в ООН и когда создана Ассамблея народа Казахстана?</li>
+    </ol>
+  </div>
+
+  <p class="thread next"><span class="ico">↺</span><span><b>Круг замыкается:</b> раздел начался с вопроса,
+    из чего собран мир (§6), прошёл через рождение Земли, её оболочки, появление жизни и карту —
+    и закончился человеком, который всё это изучает и сам оказался частью мира. Дальше §16 —
+    обобщающие задания, нового материала нет.</span></p>
+
+  <footer>
+    Лист 2 из 2 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1,
+    Алматыкітап баспасы, 2019 — §15, стр. 87–92 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+</div>
+</body>
+</html>
