@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · раздел 7 · шпаргалки</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4; --paper: #ffffff; --surface-2: #e4ebee;
+    --ink: #16263a; --ink-soft: #55697a; --ink-faint: #8296a6;
+    --c: #1f6f8b; --c-soft: #d9eaef; --c2: #3B6E8F; --c2-soft: #DCEAF3;
+    --hl: #fdf0c8; --cut: #a9bac5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --paper: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --ink-soft: #93a8b8; --ink-faint: #6f8496;
+      --c: #5cb8cc; --c-soft: #1d3a44; --c2: #7FB3D5; --c2-soft: #243542;
+      --hl: #4a3f18; --cut: #3c4d59;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --paper: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --ink-soft: #93a8b8; --ink-faint: #6f8496;
+    --c: #5cb8cc; --c-soft: #1d3a44; --c2: #7FB3D5; --c2-soft: #243542;
+    --hl: #4a3f18; --cut: #3c4d59;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height: 1.28; }
+  .wrap { padding: 1.5rem 1rem 3rem; max-width: 820px; margin: 0 auto; }
+  .lead { font-size: 0.85rem; color: var(--ink-soft); margin: 0 0 1rem; }
+  .lead b { color: var(--ink); }
+
+  .strip { background: var(--paper); border-radius: 10px; padding: 0.6rem 0.8rem 0.55rem;
+    margin-bottom: 0.8rem; border: 1px solid var(--cut); }
+
+  .head { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;
+    border-bottom: 2px solid var(--c); padding-bottom: 0.2rem; }
+  .head h2 { font-family: "Newsreader", Georgia, serif; font-size: 1rem; margin: 0; }
+  .head .pages { font-size: 0.72rem; color: var(--ink-faint); margin-left: auto; white-space: nowrap;
+    font-family: "IBM Plex Mono", monospace; }
+
+  .idea { margin: 0.25rem 0 0.3rem; padding: 0.22rem 0.5rem; background: var(--hl); border-radius: 7px; font-size: 0.76rem; }
+  .idea b { font-family: "Newsreader", Georgia, serif; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1.15fr; gap: 0.6rem; }
+  .cols h3 { font-size: 0.69rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--c); margin: 0 0 0.12rem; }
+  ul { margin: 0; padding: 0; list-style: none; font-size: 0.74rem; line-height: 1.24; }
+  li { margin-bottom: 0.07rem; }
+
+  .chain { margin: 0.28rem 0 0; padding: 0.2rem 0.5rem; background: var(--c2-soft); border-radius: 7px; font-size: 0.74rem; }
+  .chain b { color: var(--c2); }
+  .ask { margin: 0.2rem 0 0; font-size: 0.73rem; color: var(--ink-soft); }
+  .ask b { color: var(--ink); }
+  .mark { font-size: 0.67rem; color: var(--ink-faint); }
+
+  @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+
+  @media print {
+    @page { size: A4; margin: 8mm; }
+    body { background: #fff !important; }
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --paper: #ffffff !important; --surface-2: #f1f5f7 !important;
+      --ink: #16263a !important; --ink-soft: #45525e !important; --ink-faint: #6b7a88 !important;
+      --cut: #9aa7b2 !important;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-shadow: none !important; }
+    .wrap { padding: 0; max-width: none; }
+    .lead { display: none; }
+    .strip { height: 92mm; margin-bottom: 0; border: none; border-bottom: 1.5px dashed var(--cut);
+      border-radius: 0; padding: 4mm 3mm; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="lead"><b>Шпаргалки-закладки Раздела 7 «Открытия, меняющие мир» (естествознание, часть 2).</b>
+    Полоски по 92 мм, три на лист A4 (§64–§68 — четыре полоски, два листа; раздел и учебник закрыты). Печатать и
+    разрезать по пунктиру, каждая кладётся в учебник на свой параграф. Учить — по плакату параграфа, тут только
+    напоминание за 3–5 минут перед уроком.</p>
+
+  <!-- ============ §64 ============ -->
+  <section class="strip">
+    <div class="head">
+      <h2>§64. Без прошлых достижений нет открытий будущего</h2>
+      <span class="pages">Естествознание, ч. 2 · стр. 160–165</span>
+    </div>
+
+    <p class="idea"><b>Главная мысль:</b> каждое большое изобретение вырастает из прошлого и открывает дорогу новым. <i>✏️</i></p>
+
+    <div class="cols">
+      <div>
+        <h3>Изобретения (§64)</h3>
+        <ul>
+          <li><b>колесо</b> — ≈ 3000 г. до н. э., Месопотамия</li>
+          <li><b>паровой двигатель</b> — Дж. Уатт (XVIII в. ✏️)</li>
+          <li><b>автомобиль</b> — Кюньо: паровой, 3 колеса, 3 км/ч</li>
+          <li><b>микроскоп</b> → победа над микробами, вакцины</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Факты</h3>
+        <ul>
+          <li>Нобель — динамит; <b>5 премий</b>: физика, химия, медицина, литература, мир</li>
+          <li>завещание 1895, оглашено 1897</li>
+          <li>Паскаль, 1645 — счётная машина («первый компьютер»)</li>
+          <li>лампочка — «от темноты к свету»</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="chain"><b>Цепочка:</b> батарея → телеграф → телефон → радио → телевидение.</p>
+
+    <p class="ask"><b>Скажи вслух:</b> 1) почему колесо так важно? 2) как связь выросла из батареи? 3) за что дают Нобелевскую премию?
+      <span class="mark">📖 — из учебника · ✏️ — моё пояснение</span></p>
+  </section>
+
+  <!-- ============ §65 ============ -->
+  <section class="strip">
+    <div class="head">
+      <h2>§65. Казахстан в русле современных открытий</h2>
+      <span class="pages">Естествознание, ч. 2 · стр. 166–169</span>
+    </div>
+
+    <p class="idea"><b>Главная мысль:</b> наука Казахстана растёт: «Энергия будущего», новые сорта и машины. <i>✏️</i></p>
+
+    <div class="cols">
+      <div>
+        <h3>Слова и события (§65)</h3>
+        <ul>
+          <li><b>ЭКСПО-2017</b> — Астана, 10.06–10.09, «Энергия будущего»</li>
+          <li>&gt; 100 стран и 10 организаций</li>
+          <li><b>«Зелёные» технологии</b> — без вреда природе ✏️</li>
+          <li><b>Байконыр</b> — «богатая долина», первый космодром</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Учёные</h3>
+        <ul>
+          <li><b>Жахаев</b> — рис · <b>Тайманов</b> — математическая логика</li>
+          <li><b>Альдибекова</b> — ток из растений (Талдыкорган)</li>
+          <li><b>Утебаев</b> — зарядка электромобилей, Алматы</li>
+          <li>фиолетовый и диетический картофель (2× белка)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="chain"><b>Цепочка:</b> идея → опытный образец → внедрение → бренд страны.</p>
+
+    <p class="ask"><b>Скажи вслух:</b> 1) что было в Астане в 2017 году? 2) что такое «энергия будущего»? 3) назови трёх учёных Казахстана.
+      <span class="mark">📖 — из учебника · ✏️ — моё пояснение</span></p>
+  </section>
+
+  <!-- ============ §66 ============ -->
+  <section class="strip">
+    <div class="head">
+      <h2>§66. Современные исследования и будущее</h2>
+      <span class="pages">Естествознание, ч. 2 · стр. 170–173</span>
+    </div>
+
+    <p class="idea"><b>Главная мысль:</b> лучшие изобретения решают беды людей; будущее создаём мы сами. <i>✏️</i></p>
+
+    <div class="cols">
+      <div>
+        <h3>Изобретения (§66)</h3>
+        <ul>
+          <li><b>iPhone</b> — Интернет, фото, фильмы в телефоне</li>
+          <li><b>+POOL</b> (Нью-Йорк) — бассейн фильтрует реку</li>
+          <li><b>билборд UTEC</b> (Перу) — вода из воздуха</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Помощники</h3>
+        <ul>
+          <li><b>ReWalk</b> — экзоскелет, снова ходить</li>
+          <li><b>Recorder Pen</b> — рукопись → печатный текст</li>
+          <li><b>Sazan bike</b> — руль от шлема, без рук</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="chain"><b>Цепочка:</b> проблема людей → изобретение → жизнь лучше (А. Франс: «будущее создаём мы»).</p>
+
+    <p class="ask"><b>Скажи вслух:</b> 1) смысл слов Франса? 2) какие изобретения дают чистую воду? 3) каким будет мир через 100 лет?
+      <span class="mark">📖 — из учебника · ✏️ — моё пояснение</span></p>
+  </section>
+
+  <!-- ============ §67–68 ============ -->
+  <section class="strip">
+    <div class="head">
+      <h2>§67–68. Итоги и «Проверь себя»</h2>
+      <span class="pages">Естествознание, ч. 2 · стр. 174–177</span>
+    </div>
+
+    <p class="idea"><b>Главная мысль:</b> повтори главные слова всего учебника — ответы на плакате §67–68. <i>✏️</i></p>
+
+    <div class="cols">
+      <div>
+        <h3>Определения</h3>
+        <ul>
+          <li><b>Экосистема</b> — живое + неживое, обмен энергией</li>
+          <li><b>Красная книга</b> — редкие и исчезающие виды</li>
+          <li><b>Атмосфера</b> — воздушная оболочка Земли</li>
+          <li><b>Вещество</b> — то, из чего состоят тела</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ответы</h3>
+        <ul>
+          <li>абиотические: <b>2, 3, 5</b> (вулкан 4 — тоже ✏️)</li>
+          <li>Красная книга: желтопузик, чёрный аист, беркут</li>
+          <li>ветряк → электричество; знак — ЭКСПО-2017</li>
+          <li>микроскоп: окуляр, объектив, зеркало; смесь — фильтрование</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="chain"><b>Цепочка (фотосинтез):</b> углекислый газ + вода → (свет, хлорофилл) → сахар + кислород.</p>
+
+    <p class="ask"><b>Скажи вслух:</b> 1) что такое фотосинтез? 2) признаки трёх рас? 3) как животные спасаются от холода и жары?
+      <span class="mark">📖 — из учебника · ✏️ — моё пояснение</span></p>
+  </section>
+
+</div>
+</body>
+</html>
