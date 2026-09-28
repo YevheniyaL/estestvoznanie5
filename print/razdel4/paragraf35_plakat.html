@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · §35 · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4; --surface: #ffffff; --surface-2: #e4ebee;
+    --ink: #16263a; --muted: #55697a; --faint: #8296a6;
+    --accent: #1f6f8b; --accent-soft: #d9eaef;
+    --warm: #c97a2b; --warm-soft: #f7e6d0; --cold: #3a6bc9; --cold-soft: #dde6f9;
+    --border: rgba(22, 38, 58, 0.14);
+    --thread: #3B6E8F; --thread-soft: #DCEAF3;
+    --hl: #fdf0c8;
+    --b1: #1f6f8b; --b2: #3a6bc9; --b3: #4f8a5b; --b4: #c97a2b; --b5: #8a5aa8; --b6: #b0522e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+      --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+      --border: rgba(255, 255, 255, 0.14);
+      --thread: #7FB3D5; --thread-soft: #243542;
+      --hl: #4a3f18;
+      --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+    --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+    --border: rgba(255, 255, 255, 0.14);
+    --thread: #7FB3D5; --thread-soft: #243542;
+    --hl: #4a3f18;
+    --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI Emoji", system-ui, sans-serif; line-height: 1.32;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .sheet { display: flex; flex-direction: column; }
+
+  .top { display: flex; align-items: flex-start; gap: 0.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.35rem; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 0.15rem; }
+  h1 { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.5rem; margin: 0; line-height: 1.15; }
+  .sheet-tag { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm);
+    border: 1px solid var(--warm); border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap; }
+
+  .idea { margin: 0.45rem 0 0; padding: 0.3rem 0.6rem; background: var(--hl); border-radius: 8px; font-size: 0.85rem; }
+  .idea b { font-family: "Newsreader", Georgia, serif; }
+
+  .thread { display: flex; gap: 0.45rem; align-items: baseline; background: var(--thread-soft);
+    border-left: 4px solid var(--thread); border-radius: 8px; padding: 0.3rem 0.65rem;
+    font-size: 0.78rem; line-height: 1.3; color: var(--muted); }
+  .thread .ico { color: var(--thread); font-weight: 700; flex: none; }
+  .thread b { color: var(--thread); }
+  .thread.razdel { margin: 0.4rem 0 0; }
+  .thread.next { margin: 0.5rem 0 0; }
+
+  .words { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; margin: 0.5rem 0 0; }
+  .word { background: var(--accent-soft); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.75rem; line-height: 1.25; }
+  .word b { display: block; font-size: 0.82rem; color: var(--accent); }
+
+  .blk { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--b1);
+    border-radius: 9px; padding: 0.45rem 0.6rem 0.5rem; margin: 0.45rem 0 0; }
+  .blk.b2 { border-left-color: var(--b2); } .blk.b3 { border-left-color: var(--b3); }
+  .blk.b4 { border-left-color: var(--b4); } .blk.b5 { border-left-color: var(--b5); }
+  .blk.b6 { border-left-color: var(--b6); }
+  .blk h2 { font-family: "Newsreader", Georgia, serif; font-size: 1rem; font-weight: 600;
+    margin: 0 0 0.3rem; display: flex; align-items: baseline; gap: 0.4rem; }
+  .num { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600; color: #fff;
+    background: var(--b1); border-radius: 999px; padding: 0.08rem 0.45rem; flex: none; }
+  .b2 .num { background: var(--b2); } .b3 .num { background: var(--b3); }
+  .b4 .num { background: var(--b4); } .b5 .num { background: var(--b5); } .b6 .num { background: var(--b6); }
+  .task { font-family: "IBM Plex Sans", sans-serif; font-size: 0.72rem; font-weight: 400; color: var(--faint); font-style: italic; }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+  .card { background: var(--surface-2); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.78rem; line-height: 1.28; }
+  .card .t { display: block; font-size: 0.68rem; font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.1rem; }
+  .card .size { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.74rem; }
+
+  .flow { display: flex; align-items: stretch; gap: 0.3rem; flex-wrap: wrap; }
+  .flow .node { flex: 1 1 0; min-width: 88px; background: var(--surface-2); border-radius: 8px;
+    padding: 0.3rem 0.4rem; font-size: 0.76rem; font-weight: 600; text-align: center; }
+  .flow .node small { display: block; font-weight: 400; color: var(--muted); font-size: 0.68rem; }
+  .flow .node.here { background: var(--accent-soft); outline: 1.5px solid var(--accent); }
+  .flow .arr { align-self: center; color: var(--accent); font-weight: 700; flex: none; }
+
+  .rows { display: flex; flex-direction: column; gap: 0.25rem; }
+  .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.5rem; font-size: 0.78rem; line-height: 1.28;
+    background: var(--surface-2); border-radius: 7px; padding: 0.25rem 0.45rem; }
+  .row > b { color: var(--accent); }
+  .row span b { color: var(--ink); }
+
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
+  .n { background: var(--surface-2); border-radius: 8px; padding: 0.3rem 0.4rem; text-align: center; }
+  .n .big { display: block; font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; font-weight: 600; color: var(--warm); }
+  .n small { display: block; font-size: 0.67rem; color: var(--muted); line-height: 1.2; }
+
+  .note { margin: 0.3rem 0 0; font-size: 0.76rem; color: var(--muted); line-height: 1.3; }
+  .note b { color: var(--ink); }
+
+  .oral { background: var(--accent-soft); border-radius: 9px; padding: 0.45rem 0.6rem; margin: 0.5rem 0 0; }
+  .oral h2 { font-family: "Newsreader", Georgia, serif; font-size: 0.95rem; margin: 0 0 0.2rem; }
+  .oral ol { margin: 0; padding-left: 1.1rem; font-size: 0.78rem; line-height: 1.32; }
+
+  footer { margin: 0.55rem 0 0; padding-top: 0.35rem; border-top: 1px solid var(--border);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; color: var(--faint); line-height: 1.35; }
+  .back-link { font-size: 0.78rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 0.6rem; }
+
+  @media (max-width: 640px) {
+    .words, .pair, .nums { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 9mm; }
+    body { background: #fff !important; }
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f1f5f7 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --faint: #6b7a88 !important;
+      --border: #9aa7b2 !important;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-shadow: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    .sheet { zoom: 1.15; }
+    .sheet + .sheet { break-before: page; }
+    .back-link { display: none; }
+    .blk, .oral, .thread, .words, .idea { break-inside: avoid; }
+  }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.75rem; margin-top: 0.1rem; break-inside: avoid; }
+  th, td { border: 1px solid var(--border); padding: 0.18rem 0.35rem; text-align: left; line-height: 1.24; }
+  th { background: var(--surface-2); font-weight: 600; font-size: 0.73rem; color: var(--accent); }
+  td b { color: var(--ink); }
+  th.rowhead, td.rowhead { background: var(--surface-2); color: var(--accent); font-weight: 600; width: 7.2rem; }
+</style>
+<style>
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+  .card.hot { background: var(--warm-soft); }
+  .card.cold { background: var(--cold-soft); }
+  .card ul { margin: 0.1rem 0 0; padding-left: 1rem; }
+  .yes { color: var(--b3); font-weight: 700; } .no { color: var(--b6); font-weight: 700; }
+  @media (max-width: 640px) { .trio { grid-template-columns: 1fr; } }
+  @media print { .pair, .trio, table, .flow, .nums { break-inside: avoid; } .blk h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="sheet">
+
+  <a class="back-link" href="../../index.html">← на главную</a>
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 4 «Процессы в живой и неживой природе» · стр. 18–22</p>
+      <h1>§35. Чем живые организмы отличаются от неживых тел?</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <p class="idea"><b>Главная мысль:</b> живое узнают не по одному признаку, а по набору: дышит, питается,
+    растёт и развивается, размножается, реагирует на окружающее. <i>✏️</i></p>
+
+  <p class="thread prev"><span class="ico">←</span><span><b>Перед этим (§34):</b> камень разрушают вода,
+    ветер и мороз — и корни растений. Теперь: чем растение отличается от камня?</span></p>
+
+  <div class="words">
+    <div class="word"><b>Организм</b>тело живой природы 📖</div>
+    <div class="word"><b>Питание</b>поступление в организм и усвоение питательных веществ 📖</div>
+    <div class="word"><b>Рост / развитие</b>рост — увеличение размеров и массы; развитие — изменения в строении 📖</div>
+    <div class="word"><b>Раздражимость</b>способность реагировать на изменения в окружающей среде 📖</div>
+  </div>
+
+  <div class="blk b1">
+    <h2><span class="num">1</span>Кластер «Свойства живых организмов» <span class="task">📖 стр. 18–21 · заполнен ✏️</span></h2>
+    <div class="flow">
+      <div class="node">дыхание</div>
+      <div class="node">питание</div>
+      <div class="node">рост</div>
+      <div class="node">развитие</div>
+      <div class="node here">размножение</div>
+      <div class="node">раздражимость</div>
+      <div class="node">старение, смерть</div>
+    </div>
+    <p class="note">Организмы — береза и птица, ромашка и гриб, слон и жук, водоросль и человек 📖.
+      Они разные по форме, окраске, размерам, но <b>все живые</b>. Эти свойства называют
+      <b>биологическими явлениями</b> (греч. <b>биос</b> — жизнь) 📖 — как в §21.</p>
+  </div>
+
+  <div class="blk b2">
+    <h2><span class="num">2</span>Дыхание и питание 📖</h2>
+    <div class="rows">
+      <div class="row"><b>Дыхание 📖</b><span>большинство дышит <b>кислородом</b> воздуха. В клетках кислород и
+        органические вещества вступают в химические явления → выделяется <b>энергия</b> для роста,
+        развития, движения</span></div>
+      <div class="row"><b>Опыт 📖</b><span>после выдоха задержать дыхание: здоровый человек — <b>25–30 с</b>,
+        спортсмены — <b>60–90 с</b></span></div>
+      <div class="row"><b>Питание 📖</b><span>с пищей поступают вещества для роста, развития, жизни. Человек ест
+        овощи, фрукты, мясо, молочное — там и <b>органические, и неорганические</b> вещества</span></div>
+      <div class="row"><b>Сократ ✏️</b><span>«Я ем, чтобы жить, а не живу, чтобы есть» — еда нужна для жизни,
+        а не жизнь для еды: есть в меру и полезное</span></div>
+      <div class="row"><b>Вопрос 2 ✏️</b><span>для дыхания — <b>кислород</b> из воздуха; для питания —
+        <b>вещества из пищи</b> растительного и животного происхождения и вода</span></div>
+    </div>
+  </div>
+
+  <footer>
+    Лист 1 из 2 · §35 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс»,
+    часть 2, Алматыкітап баспасы, 2019 — стр. 18–20 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+
+<section class="sheet">
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · часть 2 · Раздел 4 · стр. 20–22</p>
+      <h1>§35. Свойства живого · лист 2</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <div class="blk b3">
+    <h2><span class="num">3</span>Рост, развитие, размножение 📖</h2>
+    <div class="nums">
+      <div class="n"><span class="big">19 м</span><small>вырастает эвкалипт из семечка за 7 лет (обхват 1,5 м)</small></div>
+      <div class="n"><span class="big">5 мм</span><small>в минуту растут некоторые грибы — быстрее всех</small></div>
+      <div class="n"><span class="big">2 мес.</span><small>и голые беззубые мышата — взрослые</small></div>
+      <div class="n"><span class="big">потомство</span><small>волчата, котята, мальки, пшеница из семян</small></div>
+    </div>
+    <div class="rows" style="margin-top:0.3rem">
+      <div class="row"><b>Рост и развитие 📖</b><span>мышата стали больше и тяжелее — <b>рост</b>; появились шёрстка
+        и зубы — <b>развитие</b></span></div>
+      <div class="row"><b>Размножение 📖</b><span>способность организмов <b>воспроизводить себе подобных</b></span></div>
+      <div class="row"><b>Раздражимость ✏️</b><span>подсолнух поворачивается к солнцу, кошка — на шорох, мы
+        отдёргиваем руку от горячего</span></div>
+    </div>
+  </div>
+
+  <div class="blk b4">
+    <h2><span class="num">4</span>Линии сравнения: живое и неживое <span class="task">📖 стр. 21 · заполнено ✏️</span></h2>
+    <table>
+      <tr><th class="rowhead">Свойство</th><th>Кошка, берёза (живое) ✏️</th><th>Сосулька, камень (неживое) ✏️</th></tr>
+      <tr><td class="rowhead">Дышит</td><td><b class="yes">да</b></td><td><b class="no">нет</b></td></tr>
+      <tr><td class="rowhead">Питается</td><td><b class="yes">да</b></td><td><b class="no">нет</b></td></tr>
+      <tr><td class="rowhead">Растёт</td><td><b class="yes">да</b> — сама, изнутри</td><td>сосулька «растёт» — вода намерзает <b>снаружи</b></td></tr>
+      <tr><td class="rowhead">Развивается</td><td><b class="yes">да</b></td><td><b class="no">нет</b></td></tr>
+      <tr><td class="rowhead">Размножается</td><td><b class="yes">да</b></td><td><b class="no">нет</b></td></tr>
+      <tr><td class="rowhead">Реагирует</td><td><b class="yes">да</b></td><td><b class="no">нет</b></td></tr>
+    </table>
+    <div class="rows" style="margin-top:0.3rem">
+      <div class="row"><b>Сосулька — организм? ✏️</b><span><b>Нет.</b> Она становится больше, но не дышит, не
+        питается, не размножается — это просто замёрзшая вода</span></div>
+      <div class="row"><b>Растения живые? ✏️</b><span><b>Да</b>: дышат, питаются (сами делают пищу на свету, §39),
+        растут, дают семена, поворачиваются к свету</span></div>
+      <div class="row"><b>Домашнее животное ✏️</b><span>наблюдать: <b>ест</b> (питание), <b>растёт</b>, бежит на
+        звук миски (<b>раздражимость</b>), дышит</span></div>
+    </div>
+  </div>
+
+  <div class="oral">
+    <h2>Ответь устно 📖</h2>
+    <ol>
+      <li>Какие свойства есть у всех живых организмов?</li>
+      <li>Чем рост отличается от развития? Приведи пример.</li>
+      <li>Что такое раздражимость и размножение?</li>
+      <li>Можно ли сосульку, «растущую» под крышей, назвать организмом? Почему?</li>
+    </ol>
+  </div>
+
+  <p class="thread next"><span class="ico">↓</span><span><b>Отсюда вытекает:</b> живые организмы так
+    разнообразны, что их все не изучить сразу — учёные разложили живое по группам и уровням,
+    <b>→ §36</b>.</span></p>
+
+  <footer>
+    Лист 2 из 2 · §35 · стр. 20–22 · Верховцева Л.А., Костюченко О.А., Ушакова М.В.
+    «Естествознание. 5 класс», часть 2, 2019 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+</div>
+</body>
+</html>
