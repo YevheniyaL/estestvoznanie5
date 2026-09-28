@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · §44 · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4; --surface: #ffffff; --surface-2: #e4ebee;
+    --ink: #16263a; --muted: #55697a; --faint: #8296a6;
+    --accent: #1f6f8b; --accent-soft: #d9eaef;
+    --warm: #c97a2b; --warm-soft: #f7e6d0; --cold: #3a6bc9; --cold-soft: #dde6f9;
+    --border: rgba(22, 38, 58, 0.14);
+    --thread: #3B6E8F; --thread-soft: #DCEAF3;
+    --hl: #fdf0c8;
+    --b1: #1f6f8b; --b2: #3a6bc9; --b3: #4f8a5b; --b4: #c97a2b; --b5: #8a5aa8; --b6: #b0522e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+      --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+      --border: rgba(255, 255, 255, 0.14);
+      --thread: #7FB3D5; --thread-soft: #243542;
+      --hl: #4a3f18;
+      --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --faint: #6f8496;
+    --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --cold: #7fa6ec; --cold-soft: #1e2a44;
+    --border: rgba(255, 255, 255, 0.14);
+    --thread: #7FB3D5; --thread-soft: #243542;
+    --hl: #4a3f18;
+    --b1: #5cb8cc; --b2: #7fa6ec; --b3: #7fbf8c; --b4: #e8a355; --b5: #bb92d4; --b6: #e08f6b;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI Emoji", system-ui, sans-serif; line-height: 1.32;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .sheet { display: flex; flex-direction: column; }
+
+  .top { display: flex; align-items: flex-start; gap: 0.6rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.35rem; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 0.15rem; }
+  h1 { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.5rem; margin: 0; line-height: 1.15; }
+  .sheet-tag { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm);
+    border: 1px solid var(--warm); border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap; }
+
+  .idea { margin: 0.45rem 0 0; padding: 0.3rem 0.6rem; background: var(--hl); border-radius: 8px; font-size: 0.85rem; }
+  .idea b { font-family: "Newsreader", Georgia, serif; }
+
+  .thread { display: flex; gap: 0.45rem; align-items: baseline; background: var(--thread-soft);
+    border-left: 4px solid var(--thread); border-radius: 8px; padding: 0.3rem 0.65rem;
+    font-size: 0.78rem; line-height: 1.3; color: var(--muted); }
+  .thread .ico { color: var(--thread); font-weight: 700; flex: none; }
+  .thread b { color: var(--thread); }
+  .thread.razdel { margin: 0.4rem 0 0; }
+  .thread.next { margin: 0.5rem 0 0; }
+
+  .words { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; margin: 0.5rem 0 0; }
+  .word { background: var(--accent-soft); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.75rem; line-height: 1.25; }
+  .word b { display: block; font-size: 0.82rem; color: var(--accent); }
+
+  .blk { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--b1);
+    border-radius: 9px; padding: 0.45rem 0.6rem 0.5rem; margin: 0.45rem 0 0; }
+  .blk.b2 { border-left-color: var(--b2); } .blk.b3 { border-left-color: var(--b3); }
+  .blk.b4 { border-left-color: var(--b4); } .blk.b5 { border-left-color: var(--b5); }
+  .blk.b6 { border-left-color: var(--b6); }
+  .blk h2 { font-family: "Newsreader", Georgia, serif; font-size: 1rem; font-weight: 600;
+    margin: 0 0 0.3rem; display: flex; align-items: baseline; gap: 0.4rem; }
+  .num { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600; color: #fff;
+    background: var(--b1); border-radius: 999px; padding: 0.08rem 0.45rem; flex: none; }
+  .b2 .num { background: var(--b2); } .b3 .num { background: var(--b3); }
+  .b4 .num { background: var(--b4); } .b5 .num { background: var(--b5); } .b6 .num { background: var(--b6); }
+  .task { font-family: "IBM Plex Sans", sans-serif; font-size: 0.72rem; font-weight: 400; color: var(--faint); font-style: italic; }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+  .card { background: var(--surface-2); border-radius: 8px; padding: 0.35rem 0.5rem; font-size: 0.78rem; line-height: 1.28; }
+  .card .t { display: block; font-size: 0.68rem; font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.1rem; }
+  .card .size { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.74rem; }
+
+  .flow { display: flex; align-items: stretch; gap: 0.3rem; flex-wrap: wrap; }
+  .flow .node { flex: 1 1 0; min-width: 88px; background: var(--surface-2); border-radius: 8px;
+    padding: 0.3rem 0.4rem; font-size: 0.76rem; font-weight: 600; text-align: center; }
+  .flow .node small { display: block; font-weight: 400; color: var(--muted); font-size: 0.68rem; }
+  .flow .node.here { background: var(--accent-soft); outline: 1.5px solid var(--accent); }
+  .flow .arr { align-self: center; color: var(--accent); font-weight: 700; flex: none; }
+
+  .rows { display: flex; flex-direction: column; gap: 0.25rem; }
+  .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.5rem; font-size: 0.78rem; line-height: 1.28;
+    background: var(--surface-2); border-radius: 7px; padding: 0.25rem 0.45rem; }
+  .row > b { color: var(--accent); }
+  .row span b { color: var(--ink); }
+
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
+  .n { background: var(--surface-2); border-radius: 8px; padding: 0.3rem 0.4rem; text-align: center; }
+  .n .big { display: block; font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; font-weight: 600; color: var(--warm); }
+  .n small { display: block; font-size: 0.67rem; color: var(--muted); line-height: 1.2; }
+
+  .note { margin: 0.3rem 0 0; font-size: 0.76rem; color: var(--muted); line-height: 1.3; }
+  .note b { color: var(--ink); }
+
+  .oral { background: var(--accent-soft); border-radius: 9px; padding: 0.45rem 0.6rem; margin: 0.5rem 0 0; }
+  .oral h2 { font-family: "Newsreader", Georgia, serif; font-size: 0.95rem; margin: 0 0 0.2rem; }
+  .oral ol { margin: 0; padding-left: 1.1rem; font-size: 0.78rem; line-height: 1.32; }
+
+  footer { margin: 0.55rem 0 0; padding-top: 0.35rem; border-top: 1px solid var(--border);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; color: var(--faint); line-height: 1.35; }
+  .back-link { font-size: 0.78rem; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 0.6rem; }
+
+  @media (max-width: 640px) {
+    .words, .pair, .nums { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 9mm; }
+    body { background: #fff !important; }
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f1f5f7 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --faint: #6b7a88 !important;
+      --border: #9aa7b2 !important;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-shadow: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    .sheet { zoom: 1.20; }
+    .sheet + .sheet { break-before: page; }
+    .back-link { display: none; }
+    .blk, .oral, .thread, .words, .idea { break-inside: avoid; }
+  }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.75rem; margin-top: 0.1rem; break-inside: avoid; }
+  th, td { border: 1px solid var(--border); padding: 0.18rem 0.35rem; text-align: left; line-height: 1.24; }
+  th { background: var(--surface-2); font-weight: 600; font-size: 0.73rem; color: var(--accent); }
+  td b { color: var(--ink); }
+  th.rowhead, td.rowhead { background: var(--surface-2); color: var(--accent); font-weight: 600; width: 7.2rem; }
+</style>
+<style>
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+  .card.hot { background: var(--warm-soft); }
+  .card.cold { background: var(--cold-soft); }
+  .card ul { margin: 0.1rem 0 0; padding-left: 1rem; }
+  .yes { color: var(--b3); font-weight: 700; } .no { color: var(--b6); font-weight: 700; }
+  @media (max-width: 640px) { .trio { grid-template-columns: 1fr; } }
+  @media print { .pair, .trio, table, .flow, .nums { break-inside: avoid; } .blk h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="sheet">
+
+  <a class="back-link" href="../../index.html">← на главную</a>
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 5 «Энергия и движение» · стр. 64–69</p>
+      <h1>§44. Различия между температурой и тепловой энергией</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <p class="idea"><b>Главная мысль:</b> температура показывает, насколько тело нагрето; тепловая энергия —
+    это движение частиц, и она сама переходит от тёплого к холодному, пока температуры не сравняются. <i>✏️</i></p>
+
+  <p class="thread prev"><span class="ico">←</span><span><b>Перед этим (§43):</b> энергия бывает механической,
+    тепловой, электрической. Теперь — тепловая и то, чем её измеряют.</span></p>
+
+  <div class="words">
+    <div class="word"><b>Температура (t)</b>величина, характеризующая тепловое состояние тела 📖</div>
+    <div class="word"><b>Тепловая энергия</b>вид энергии, связанный с движением частиц тела 📖</div>
+    <div class="word"><b>Тепловое равновесие</b>температуры тел сравнялись — дальше ничего не меняется 📖</div>
+    <div class="word"><b>Термометр</b>прибор для измерения температуры воздуха, воды, тела 📖</div>
+  </div>
+
+  <div class="blk b1">
+    <h2><span class="num">1</span>Тепло идёт от тёплого к холодному <span class="task">📖 стр. 64–65 · ответы ✏️</span></h2>
+    <div class="flow">
+      <div class="node">тёплое тело<small>отдаёт тепло — внутренняя энергия ↓</small></div><span class="arr">→</span>
+      <div class="node">холодное тело<small>получает тепло — внутренняя энергия ↑</small></div><span class="arr">→</span>
+      <div class="node here">температуры равны<small>тепловое равновесие</small></div>
+    </div>
+    <div class="rows" style="margin-top:0.3rem">
+      <div class="row"><b>Ложка в чае ✏️</b><span>ложка <b>нагревается</b>, а чай чуть остывает: тепло переходит от
+        горячего к холодному</span></div>
+      <div class="row"><b>Опыт 1: лёд в воде ✏️</b><span>после таяния льда температура воды <b>понизилась</b>: вода
+        отдала тепло льду. Потом вся вода примет температуру <b>воздуха</b> 📖</span></div>
+      <div class="row"><b>Опыт 2 ✏️</b><span>рукой температуру точно не узнать: парта и учебник кажутся разными,
+        но у всех неживых предметов она <b>равна температуре воздуха</b> 📖 — нужен термометр</span></div>
+    </div>
+  </div>
+
+  <div class="blk b2">
+    <h2><span class="num">2</span>Какие бывают температуры 📖</h2>
+    <div class="nums">
+      <div class="n"><span class="big">36,6 °C</span><small>норма тела человека; ±0,4 °C не страшно</small></div>
+      <div class="n"><span class="big">220–280 °C</span><small>в кондитерских печах</small></div>
+      <div class="n"><span class="big">900–1000 °C</span><small>в закалочных печах металлургии</small></div>
+      <div class="n"><span class="big">десятки млн °C</span><small>в центре Солнца (в лаборатории — до 2 млн °C на миг)</small></div>
+    </div>
+  </div>
+
+  <footer>
+    Лист 1 из 2 · §44 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс»,
+    часть 2, Алматыкітап баспасы, 2019 — стр. 64–65 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+
+<section class="sheet">
+
+  <div class="top">
+    <div>
+      <p class="eyebrow">Естествознание 5 · Раздел 5 · стр. 65–69</p>
+      <h1>§44. Термометры · лист 2</h1>
+    </div>
+    <span class="sheet-tag">учим</span>
+  </div>
+
+  <div class="blk b3">
+    <h2><span class="num">3</span>Термометры и как ими пользоваться 📖</h2>
+    <p class="note" style="margin-top:0">Чаще всего в термометре — жидкость (<b>ртуть или спирт</b>): при нагревании
+      она <b>расширяется</b> и поднимается, при охлаждении — сжимается 📖. Виды: ртутный медицинский,
+      электронный, спиртовой, биметаллический, термоэлектрический, инфракрасный 📖.</p>
+    <div class="flow" style="margin-top:0.3rem">
+      <div class="node">1. поместить в среду</div><span class="arr">→</span>
+      <div class="node">2. подождать, пока показания не перестанут меняться</div><span class="arr">→</span>
+      <div class="node here">3. снять показания, <b>не вынимая</b></div>
+    </div>
+    <div class="rows" style="margin-top:0.3rem">
+      <div class="row"><b>Кипящая вода ✏️</b><span>ртутный лабораторный, электронный или термоэлектрический;
+        <b>не спиртовой</b> — спирт кипит уже при 78 °C, <b>не медицинский</b> — у него шкала 35–42 °C</span></div>
+      <div class="row"><b>Морозилка ✏️</b><span><b>спиртовой</b> или электронный: спирт не замерзает на морозе,
+        а ртуть замерзает при −39 °C</span></div>
+      <div class="row"><b>⚠ Ртуть 📖</b><span>пары ртути и сама ртуть <b>сильно ядовиты</b> — разбитый градусник не трогать
+        руками, сказать взрослым</span></div>
+    </div>
+  </div>
+
+  <div class="blk b4">
+    <h2><span class="num">4</span>Опыты и вопросы <span class="task">📖 стр. 67–68 — ответы ✏️</span></h2>
+    <div class="rows">
+      <div class="row"><b>Опыт 3 ✏️</b><span>горячая вода остывает <b>быстрее в начале</b>: разница с воздухом большая,
+        тепло уходит быстро; к концу разница меньше — медленнее</span></div>
+      <div class="row"><b>Лермонтов ✏️</b><span>осенью солнце стоит <b>ниже</b>, лучи падают <b>наклонно</b> и день
+        короче — земля греется меньше. Солнце «не холодней само», но греет слабее</span></div>
+      <div class="row"><b>Термометр из бутылки 📖</b><span>бутылка с подкрашенной водой (3 см), в крышке трубочка;
+        теплее — вода в трубочке <b>ползёт вверх</b>, холоднее — вниз. Годится <b>только в комнате</b> — на морозе
+        вода замёрзнет. Отметки нанести по настоящему термометру</span></div>
+    </div>
+  </div>
+
+  <div class="oral">
+    <h2>Ответь устно 📖</h2>
+    <ol>
+      <li>Что такое температура и тепловая энергия? Чем они различаются?</li>
+      <li>Куда переходит тепло и когда это прекращается?</li>
+      <li>Как устроен жидкостный термометр? Правила измерения температуры.</li>
+      <li>Каким термометром измерить кипяток, а каким — мороз?</li>
+    </ol>
+  </div>
+
+  <p class="thread next"><span class="ico">↓</span><span><b>Отсюда вытекает:</b> раз тепло всегда уходит от
+    тёплого к холодному, зимой оно уходит из дома на улицу. Как его сберечь, <b>→ §45</b>.</span></p>
+
+  <footer>
+    Лист 2 из 2 · §44 · стр. 65–69 · Верховцева Л.А., Костюченко О.А., Ушакова М.В.
+    «Естествознание. 5 класс», часть 2, 2019 · 📖 — из учебника · ✏️ — моё пояснение
+  </footer>
+
+</section>
+</div>
+</body>
+</html>
