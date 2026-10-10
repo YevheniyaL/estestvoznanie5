@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · СОР 5.1.2 · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --surface-2: #e4ebee;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #1f6f8b;
+    --accent-soft: #d9eaef;
+    --warm: #c97a2b;
+    --warm-soft: #f7e6d0;
+    --bad: #b0453d;
+    --bad-soft: #f6dfdc;
+    --sea: #1d5fa8;
+    --sea-soft: #dde9f7;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(31, 111, 139, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --bad: #e08a80; --bad-soft: #3a2622;
+      --sea: #7fb3ef; --sea-soft: #1b2e45;
+      --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --bad: #e08a80; --bad-soft: #3a2622;
+    --sea: #7fb3ef; --sea-soft: #1b2e45;
+    --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 40px 20px 60px;
+    display: flex; flex-direction: column; align-items: center; gap: 40px;
+  }
+
+  .sheet { width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 14px; }
+
+  header.top {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 1.95rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 0.84rem; max-width: 92ch; line-height: 1.45; margin: 0; }
+  .legend {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--muted);
+    display: flex; gap: 14px; flex-wrap: wrap; margin-top: 2px;
+  }
+
+  /* цепочка раздела */
+  .chainline {
+    background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 7px;
+  }
+  .chainline .ttl { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.02rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 4px; align-items: stretch; }
+  .lk {
+    background: var(--accent-soft); border-radius: 6px; padding: 4px 7px; font-size: 0.72rem;
+    line-height: 1.25; flex: 1 1 110px; display: flex; flex-direction: column;
+  }
+  .lk i { font-family: "IBM Plex Mono", monospace; font-style: normal; color: var(--accent); font-weight: 600; font-size: 0.66rem; }
+  .lk b { font-size: 0.76rem; }
+  .lk span { color: var(--muted); font-size: 0.69rem; }
+  .lk.last { background: var(--warm-soft); }
+  .chainline .why { font-size: 0.76rem; line-height: 1.4; }
+
+  .goals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .goal {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    border-top: 3px solid var(--accent);
+    padding: 10px 12px 11px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .goal.wide { grid-column: 1 / -1; }
+  .goal.ocean { border: 2px solid var(--sea); border-top-width: 5px; background: var(--surface); }
+  .goal-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .goal-code {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; font-weight: 600;
+    color: #ffffff; background: var(--accent); border-radius: 999px; padding: 2px 9px;
+  }
+  .ocean .goal-code { background: var(--sea); }
+  .goal-lesson {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
+  }
+  .goal h2 {
+    font-family: "Newsreader", Georgia, serif; font-size: 1.04rem; font-weight: 600;
+    margin: 0; width: 100%; line-height: 1.25;
+  }
+  .ocean h2 { color: var(--sea); font-size: 1.12rem; }
+
+  .row { font-size: 0.77rem; line-height: 1.36; }
+  .row .k { font-weight: 600; color: var(--accent); }
+  .ocean .row .k { color: var(--sea); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 5px;
+    padding: 4px 7px; font-size: 0.74rem; line-height: 1.25; flex: 1 1 120px;
+  }
+  .chip.extra { background: var(--warm-soft); border-left-color: var(--warm); }
+  .chip b { display: block; font-size: 0.76rem; }
+  .chip span { color: var(--muted); font-size: 0.7rem; }
+
+  .steps { display: flex; flex-wrap: wrap; gap: 4px; align-items: stretch; }
+  .step {
+    background: var(--surface-2); border-radius: 5px; padding: 3px 7px;
+    font-size: 0.72rem; font-weight: 500; display: flex; align-items: center; gap: 4px;
+  }
+  .step i { font-family: "IBM Plex Mono", monospace; font-style: normal; color: var(--accent); font-weight: 600; }
+  .arrow { color: var(--muted); font-size: 0.8rem; align-self: center; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.72rem; }
+  th, td { border: 1px solid var(--border); padding: 3px 6px; text-align: left; vertical-align: top; line-height: 1.3; }
+  th { background: var(--surface-2); font-weight: 600; font-size: 0.7rem; }
+  td.y { font-family: "IBM Plex Mono", monospace; font-weight: 600; white-space: nowrap; }
+  .ocean th { background: var(--sea-soft); }
+
+  .two-col { display: grid; grid-template-columns: 1.25fr 1fr; gap: 10px; }
+  .stage { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sea); margin-bottom: 3px; }
+
+  .tip, .trap {
+    border-radius: 7px; padding: 6px 9px; font-size: 0.74rem; line-height: 1.35;
+  }
+  .tip { background: var(--warm-soft); border-left: 3px solid var(--warm); }
+  .trap { background: var(--bad-soft); border-left: 3px solid var(--bad); }
+  .tip .label, .trap .label {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; text-transform: uppercase;
+    letter-spacing: 0.07em; font-weight: 600; display: block; margin-bottom: 2px;
+  }
+  .tip .label { color: var(--warm); }
+  .trap .label { color: var(--bad); }
+  .thread { background: var(--sea-soft); border-left: 3px solid var(--sea); border-radius: 7px; padding: 6px 9px; font-size: 0.74rem; line-height: 1.38; }
+  .thread .label { font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; display: block; margin-bottom: 2px; color: var(--sea); }
+
+  .pairs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px 14px; }
+  .pairs div { font-size: 0.74rem; line-height: 1.32; padding: 2px 0; border-bottom: 1px dashed var(--border); }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 8px; font-size: 0.7rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .back-link {
+    font-family: "IBM Plex Sans", sans-serif; font-size: 0.82rem; color: var(--accent);
+    text-decoration: none; align-self: flex-start;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    .goals, .two-col, .pairs { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --border: #93a0ab !important;
+      --accent: #1f6f8b !important; --accent-soft: #d9eaef !important;
+      --warm: #c97a2b !important; --warm-soft: #f7e6d0 !important;
+      --bad: #b0453d !important; --bad-soft: #f6dfdc !important;
+      --sea: #1d5fa8 !important; --sea-soft: #dde9f7 !important;
+    }
+    @page { size: A4; margin: 8mm; }
+    body { background: #ffffff !important; padding: 0 !important; display: block; }
+    .sheet { max-width: none; padding: 0; zoom: 0.8; gap: 10px; }
+    .sheet + .sheet { break-before: page; }
+    .sheet.s2 { zoom: 0.88; }
+    .sheet.s3 { zoom: 1.12; }
+    .back-link { display: none; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .goal, .chip, .tip, .trap, .thread, table, .chainline { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ЛИСТ 1 -->
+<div class="sheet">
+  <a class="back-link" href="../../razdel2/sor_5_1_2.html">← страница СОР 5.1.2</a>
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · 1 четверть · СОР № 2 · лист 1 из 3</span>
+    <h1>СОР за раздел «Вселенная. Земля. Человек» — всё, что учить</h1>
+    <p class="subhead">Описания СОР от учителя нет, поэтому здесь весь раздел: §6–15, стр. 36–92. В каждом блоке — номер урока (§) и страницы учебника. Лист 1 — Земля (§6–9), лист 2 — открытия и история изучения океанов (§13–14), лист 3 — карта и план (§10–12), люди (§15) и «не путать».</p>
+    <div class="legend"><span>📖 — из учебника</span><span>✏️ — подсказка от мамы, в учебнике этого нет</span></div>
+  </header>
+
+  <section class="chainline">
+    <div class="ttl">Логика раздела: от частицы — к человеку ✏️</div>
+    <div class="links">
+      <div class="lk"><i>§6</i><b>Из чего собран мир?</b><span>микромир → макромир</span></div>
+      <div class="lk"><i>§7</i><b>Откуда Земля?</b><span>миф → гипотезы → Большой взрыв</span></div>
+      <div class="lk"><i>§8</i><b>Как она устроена?</b><span>3 слоя внутри, 4 оболочки снаружи</span></div>
+      <div class="lk"><i>§9</i><b>Откуда жизнь?</b><span>архей → … → кайнозой, человек</span></div>
+      <div class="lk"><i>§10–12</i><b>Как описать Землю?</b><span>план, знаки, азимут, масштаб</span></div>
+      <div class="lk"><i>§13–14</i><b>Кто составил карту мира?</b><span>суша, материки, океан</span></div>
+      <div class="lk last"><i>§15</i><b>Почему люди разные?</b><span>расы равны</span></div>
+    </div>
+    <div class="why"><b>Как связано:</b> мир собран из частиц (§6) → самое крупное, что рядом, — Земля; она родилась из раскалённого вещества и остыла (§7) → получились слои и оболочки (§8) → в одной из оболочек, биосфере, появилась жизнь, а в конце — человек (§9) → человек научился рисовать поверхность Земли: план и карту (§10–12) → люди за 2500 лет собрали карту всей суши и океана (§13–14) → расселились по всем материкам и стали внешне разными (§15). <b>↺ Круг замыкается:</b> человек изучает мир, частью которого сам является.</div>
+  </section>
+
+  <div class="goals">
+
+    <!-- §6 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">§6</span>
+        <span class="goal-lesson">ур. §6 · стр. 36–39</span>
+        <h2>Микромир и макромир</h2>
+      </div>
+      <div class="row">📖 <span class="k">Микромир</span> — молекулы, атомы, элементарные частицы; без микроскопа не увидеть (10⁻⁸–10⁻¹⁶ см). <span class="k">Макромир</span> — объекты больше молекулы, но меньше звёздных систем; главный объект — <b>человек</b>.</div>
+      <div class="steps">
+        <div class="step"><i>1</i>элементарная частица</div><span class="arrow">→</span>
+        <div class="step"><i>2</i>атом</div><span class="arrow">→</span>
+        <div class="step"><i>3</i>молекула</div><span class="arrow">→</span>
+        <div class="step"><i>4</i>тело, предмет</div>
+      </div>
+      <div class="row">📖 Микромир — основа макромира, как <b>кирпичи — основа дома</b>: разрушится кирпич — рухнет здание. Бактерии и вирусы — микромир. Вирусы открыл <b>Д.И. Ивановский в 1892 г.</b> (вирусология).</div>
+      <div class="row">✏️ По размеру: <b>наномир → микромир → макромир → мегамир</b> (звёзды, галактики).</div>
+      <div class="tip"><span class="label">✏️ Как узнать в задании</span>Видно глазом, можно взять в руки — <b>макро</b> (автомобиль, дерево, человек). Нужен микроскоп — <b>микро</b> (атом, вирус, бифидобактерия).</div>
+    </section>
+
+    <!-- §7 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">§7</span>
+        <span class="goal-lesson">ур. §7 · стр. 40–45</span>
+        <h2>Как произошла Земля</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><i>1</i>мифы (боги)</div><span class="arrow">→</span>
+        <div class="step"><i>2</i>гипотезы</div><span class="arrow">→</span>
+        <div class="step"><i>3</i>теория Большого взрыва</div>
+      </div>
+      <div class="chips">
+        <div class="chip"><b>И. Кант</b><span>из пылевой туманности, <u>независимо от Солнца</u></span></div>
+        <div class="chip"><b>О.Ю. Шмидт</b><span>из твёрдых частиц, <u>захваченных Солнцем</u></span></div>
+        <div class="chip"><b>П.С. Лаплас</b><span>из раскалённой туманности, <u>распад Солнца</u></span></div>
+      </div>
+      <div class="row">📖 <span class="k">Большой взрыв:</span> огненный шар → взрыв → частицы остыли в атомы (≈ 1 млн лет) → облака пыли и газа → звёзды, галактики, планеты → ядро Земли → кора (затвердела за ≈ 1 млрд лет) → атмосфера → <b>океаны</b> (газы сконденсировались) → условия для жизни.</div>
+      <div class="row">📖 <b>Возраст Земли — 4,5–4,6 млрд лет.</b> Вавилон (4000 лет назад): Земля — выпуклый свод, кругом вода. Коперник прав — Земля вертится вокруг Солнца; Птолемей ошибался.</div>
+      <div class="trap"><span class="label">✏️ Ловушка</span>Миф — без доказательств; гипотеза — научное предположение; теория Большого взрыва — общепринятая версия. Рождение Земли никто не видел, поэтому наука здесь <b>предполагает</b>.</div>
+    </section>
+
+    <!-- §8 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">§8</span>
+        <span class="goal-lesson">ур. §8 · стр. 46–51</span>
+        <h2>Из чего состоит Земля</h2>
+      </div>
+      <table>
+        <tr><th>Внутри — 3 слоя 📖</th><th>Цифры 📖</th></tr>
+        <tr><td><b>Земная кора</b></td><td>океаническая 5–10 км · материковая 30–40 км, в горах до 80 км</td></tr>
+        <tr><td><b>Мантия</b> (верхняя, нижняя)</td><td>до 2900 км · <b>83% объёма</b>, 67% массы Земли</td></tr>
+        <tr><td><b>Ядро</b> (внешнее, внутреннее)</td><td>3000–6000 км · горячее, как поверхность Солнца</td></tr>
+      </table>
+      <div class="chips">
+        <div class="chip"><b>Литосфера</b><span>«литос» — камень · твёрдая</span></div>
+        <div class="chip"><b>Гидросфера</b><span>«гидрос» — вода · водная</span></div>
+        <div class="chip"><b>Биосфера</b><span>«биос» — жизнь · живая</span></div>
+        <div class="chip"><b>Атмосфера</b><span>«атмос» — воздух · газы</span></div>
+      </div>
+      <div class="row">📖 Вглубь коры: <b>+30 °C каждые 100 м</b>. Воды: <b>97% в океанах</b>, 3% пресная (¾ её — лёд). Воздух: 79% азота, &lt;21% кислорода. <b>Кольская скважина — 12 263 м</b>, до мантии не дошла. Все 4 оболочки встречаются в <b>почве</b> (опыт: пузырьки → пар → дым → песок и глина).</div>
+      <div class="trap"><span class="label">✏️ Ловушка</span><b>Слои</b> (кора, мантия, ядро) — внутри; <b>оболочки-геосферы</b> (лито-, гидро-, био-, атмо-) — снаружи. От поверхности вглубь: кора → мантия → ядро.</div>
+    </section>
+
+    <!-- §9 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">§9</span>
+        <span class="goal-lesson">ур. §9 · стр. 52–58</span>
+        <h2>Как возникла жизнь</h2>
+      </div>
+      <div class="chips">
+        <div class="chip"><b>Гипотеза эволюции</b><span>Ч. Дарвин: жизнь зародилась на Земле, развивалась через <u>естественный отбор</u> и борьбу за выживание</span></div>
+        <div class="chip extra"><b>Панспермия</b><span>Рихтер, <b>1865</b>: жизнь занесена из космоса метеоритами и пылью</span></div>
+      </div>
+      <div class="steps">
+        <div class="step"><i>1</i>архей</div><span class="arrow">→</span>
+        <div class="step"><i>2</i>протерозой</div><span class="arrow">→</span>
+        <div class="step"><i>3</i>фанерозой: палеозой → мезозой → кайнозой</div>
+      </div>
+      <table>
+        <tr><td><b>Архей</b></td><td>кора и Мировой океан; первые простейшие — <b>не позже 3,5 млрд лет назад</b></td></tr>
+        <tr><td><b>Протерозой</b></td><td>в океане водоросли и первые многоклеточные: губки, моллюски, черви</td></tr>
+        <tr><td><b>Палеозой</b></td><td>единый материк распался на будущие материки</td></tr>
+        <tr><td><b>Мезозой</b></td><td>жизнь разнообразнее и сложнее, динозавры</td></tr>
+        <tr><td><b>Кайнозой</b></td><td>приматы → <b>человек</b>; Земля приняла современный вид</td></tr>
+      </table>
+      <div class="tip"><span class="label">✏️ Естественный отбор</span>Выживает не самый сильный, а <b>самый приспособленный</b>. Предки человека менялись, потому что <b>изменился климат</b> 📖. Человек разумный — <i>Homo sapiens</i>.</div>
+    </section>
+
+  </div>
+
+  <footer>Лист 1 из 3 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §6–9, стр. 36–58</footer>
+</div>
+
+<!-- ЛИСТ 2 -->
+<div class="sheet s2">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · СОР № 2 · лист 2 из 3</span>
+    <h1>Открытия и история изучения океанов — §13–14</h1>
+  </header>
+
+  <div class="goals">
+
+    <!-- ОКЕАН -->
+    <section class="goal wide ocean">
+      <div class="goal-head">
+        <span class="goal-code">★ тема СОР</span>
+        <span class="goal-lesson">ур. §13–14 · стр. 70–78, 85–86</span>
+        <h2>История изучения океанов: сначала плавали ПО океану, потом спустились В ГЛУБИНУ</h2>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="stage">Этап 1 · поверхность — плавания 📖</div>
+          <table>
+            <tr><th>Когда</th><th>Кто</th><th>Что сделал</th></tr>
+            <tr><td class="y">VI в. до н.э.</td><td>финикийцы</td><td>по приказу фараона Нехо II обогнули Африку (≈ 3 года)</td></tr>
+            <tr><td class="y">X в.</td><td>викинги</td><td>Исландия, открыли Гренландию</td></tr>
+            <tr><td class="y">1487</td><td>Б. Диаш</td><td>обогнул юг Африки — дорога на восток</td></tr>
+            <tr><td class="y">1492</td><td>Х. Колумб</td><td>переплыл <b>Атлантический</b> ✏️ океан (3 августа → 12 октября), открыл Америку, думал — Индия</td></tr>
+            <tr><td class="y">1498</td><td>Васко да Гама</td><td>морской путь в Индию вокруг Африки</td></tr>
+            <tr><td class="y">1519</td><td>Ф. Магеллан</td><td>первое <b>кругосветное</b> плавание; океан назвал <b>Тихим</b> — ни одного шторма; вернулись 18 из 265, судно «Виктория»</td></tr>
+            <tr><td class="y">1642 · XVIII в.</td><td>Тасман · Дж. Кук</td><td>Австралия · Большой Барьерный риф</td></tr>
+            <tr><td class="y">1820</td><td>Беллинсгаузен и Лазарев</td><td><b>28 января</b> — Антарктида, 6-й материк</td></tr>
+            <tr><td class="y">XX в.</td><td>Тур Хейердал</td><td>доказал: древние люди могли переплыть Тихий океан на плоту</td></tr>
+          </table>
+          <div class="row" style="margin-top:4px">📖 Итог эпохи <b>Великих географических открытий</b> (середина XV — середина XVII в.): узнали очертания суши, доказали <b>шарообразность Земли</b> и <b>единство Мирового океана</b>. Первый навигационный прибор — <b>астролябия</b> (≈ 150 г. до н.э.).</div>
+        </div>
+        <div>
+          <div class="stage">Этап 2 · глубины — с XIX века 📖</div>
+          <div class="row"><span class="k">Почему так поздно?</span> ✏️ Плавать умели давно, а заглянуть на дно нечем: нужны были приборы.</div>
+          <div class="chips">
+            <div class="chip"><b>Батискаф</b><span>подводный обитаемый аппарат для погружения человека</span></div>
+            <div class="chip"><b>Эхолокатор</b><span>прибор для измерения глубин</span></div>
+            <div class="chip"><b>Акваланг</b><span>чтобы плавать под водой — Кусто и Ганьян</span></div>
+          </div>
+          <table style="margin-top:5px">
+            <tr><td class="y">1872–1876</td><td>плавание «<b>Челленджера</b>» → <b>первая карта морского дна</b></td></tr>
+            <tr><td class="y">XX в.</td><td>на дне нашли <b>огромные горные хребты</b>, подводные вулканы, горячие впадины; <b>вулканов в океане больше, чем на суше</b></td></tr>
+            <tr><td class="y">1960</td><td><b>Жак Пикар</b> (Швейцария) и <b>Дон Уолш</b> (США) в батискафе — дно <b>Марианской впадины, 11 022 м</b>; <b>жизнь есть даже там</b></td></tr>
+            <tr><td class="y">XX в.</td><td><b>Жак Ив Кусто</b> (Франция) с Эмилем Ганьяном изобрёл <b>акваланг</b></td></tr>
+          </table>
+          <div class="thread" style="margin-top:6px"><span class="label">✏️ Океан через весь раздел — связи</span>
+            §7: океаны появились, когда газы из недр <b>сконденсировались</b> → §8: <b>97% воды</b> Земли — в океанах; океаническая кора тонкая (<b>5–10 км</b>) — бурить к мантии лучше со дна; Марианский жёлоб — самая низкая точка литосферы → §9: жизнь зародилась <b>в Мировом океане</b> (архей, протерозой) → §14: на дне глубочайшей впадины жизнь <b>есть до сих пор</b>.</div>
+        </div>
+      </div>
+      <div class="trap"><span class="label">✏️ Ловушки</span><b>Колумб</b> открыл Америку, а <b>Веспуччи</b> доказал, что это новый материк (назван в его честь). <b>Диаш</b> только обогнул Африку, до Индии дошёл <b>да Гама</b>. <b>Пикар и Уолш</b> — рекорд глубины, <b>Кусто</b> — акваланг. «Челленджер» — карта дна, а не погружение.</div>
+    </section>
+
+    <!-- §13–14 суша -->
+    <section class="goal wide">
+      <div class="goal-head">
+        <span class="goal-code">§13–14</span>
+        <span class="goal-lesson">ур. §13–14 · стр. 70–84</span>
+        <h2>Кто открывал сушу и материки</h2>
+      </div>
+      <div class="two-col">
+      <table>
+        <tr><td><b>Геродот</b>, V в. до н.э.</td><td>«отец истории», описал Каспий и земли Казахстана</td></tr>
+        <tr><td><b>Эратосфен</b></td><td>первым вычислил размеры Земли — «отец географии»</td></tr>
+        <tr><td><b>Марко Поло</b>, 1271–1295</td><td>Китай; рассказал Европе о Востоке</td></tr>
+        <tr><td><b>Афанасий Никитин</b>, 1466–1469</td><td>Индия, «Хождение за три моря»</td></tr>
+        <tr><td><b>Витус Беринг</b></td><td>Сибирь; Берингов пролив — путь к Аляске</td></tr>
+        <tr><td><b>А. Гумбольдт</b></td><td>Южная Америка, Амазонка — «второй Колумб»</td></tr>
+        <tr><td><b>Д. Ливингстон</b></td><td>Африка: Калахари, Замбези, водопад Виктория</td></tr>
+        <tr><td><b>Н. Пржевальский</b></td><td>Центральная Азия, ≈ 35 000 км; дикая лошадь</td></tr>
+        <tr><td><b>П.П. Семёнов-Тян-Шанский</b></td><td>Тянь-Шань, Казахстан</td></tr>
+      </table>
+      <div style="display:flex;flex-direction:column;gap:6px">
+      <div class="row">📖 <span class="k">Великий шёлковый путь</span> соединил Восток и Запад, шёл через Казахстан: Китай → Кыргызстан → Казахстан → Таджикистан → Узбекистан → Туркменистан → Иран → Азербайджан → Грузия.</div>
+      <div class="tip"><span class="label">✏️ Главная мысль</span>Карту собирали ≈ 2500 лет: знакомые земли → берега материков → вглубь суши → в XX веке дно океана.</div>
+      </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>Лист 2 из 3 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §13–14, стр. 70–86</footer>
+</div>
+
+<!-- ЛИСТ 3 -->
+<div class="sheet s3">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · СОР № 2 · лист 3 из 3</span>
+    <h1>Карта и план · почему люди разные · не путать — §10–12, §15</h1>
+  </header>
+
+  <div class="goals">
+
+    <!-- §10–12 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">§10–12</span>
+        <span class="goal-lesson">ур. §10–12 · стр. 59–69</span>
+        <h2>Карта, план, съёмка</h2>
+      </div>
+      <div class="row">📖 <span class="k">План местности</span> — чертёж небольшого участка в уменьшенном виде: 1) на плоскости, 2) уменьшен без искажений, 3) условными знаками. <span class="k">Легенда</span> — все знаки карты с объяснением. Зелёный — растительность, голубой — вода. Вверху карты — <b>север</b>.</div>
+      <div class="row">📖 <span class="k">Глобус</span> — модель Земли, искажения минимальные. <span class="k">Аэрофотоснимок</span> — как выглядит сверху; <span class="k">план</span> — как обозначено и подписано ✏️.</div>
+      <div class="row">📖 <span class="k">Геодезия</span> — наука об измерениях на земной поверхности. <span class="k">Съёмка:</span> глазомерная (шагами, на глаз) · полярная (из одной точки — полюса) · маршрутная (вдоль пути, с остановками).</div>
+      <div class="row">📖 <span class="k">Азимут</span> — угол от направления на <b>север</b> до объекта <b>по часовой стрелке</b>. ✏️ С 0° · В 90° · Ю 180° · З 270°.</div>
+      <div class="row">📖 <span class="k">Масштаб</span> — во сколько раз уменьшено. Астана — Алматы 970 км = 97 000 000 см; М 1:1 000 000 → <b>97 см</b> на карте.</div>
+      <div class="trap"><span class="label">✏️ Ловушка</span>Азимут — <b>направление</b> (градусы), масштаб — <b>уменьшение</b> (во сколько раз). км → см: ×100 000.</div>
+    </section>
+
+    <!-- §15 -->
+    <section class="goal">
+      <div class="goal-head">
+        <span class="goal-code">§15</span>
+        <span class="goal-lesson">ур. §15 · стр. 87–92</span>
+        <h2>Почему люди разные</h2>
+      </div>
+      <div class="row">📖 <span class="k">Раса</span> — большая группа людей с общими <b>наследуемыми</b> внешними признаками; сложились под действием <b>природных условий</b>. Слово ввёл <b>Ж. Бюффон в 1740 г.</b></div>
+      <div class="chips">
+        <div class="chip"><b>Европеоидная</b><span>✏️ светлая кожа, выступающий нос, мягкие волосы</span></div>
+        <div class="chip"><b>Экваториальная</b><span>тёмная кожа, курчавые волосы — защита от солнца</span></div>
+        <div class="chip"><b>Монголоидная</b><span>плоское широкое лицо, узкий разрез глаз; полость носа греет холодный воздух</span></div>
+      </div>
+      <div class="row">📖 Все расы <b>равны</b> по уму и физическому развитию. <span class="k">Расизм</span> — ложная идея о неравенстве рас. <b>Миклухо-Маклай</b> 2,5 года жил среди папуасов Новой Гвинеи и доказал родство рас.</div>
+      <div class="row">📖 Казахстан: &gt;130 национальностей · в ООН — <b>2 марта 1992</b> · Ассамблея народа Казахстана — <b>1 марта 1995</b>.</div>
+    </section>
+
+    <!-- НЕ ПУТАТЬ -->
+    <section class="goal wide">
+      <div class="goal-head">
+        <span class="goal-code">!</span>
+        <h2>Не путать — пары из всего раздела ✏️</h2>
+      </div>
+      <div class="pairs">
+        <div><b>Атом</b> мельче <b>молекулы</b></div>
+        <div><b>Кант</b> — без Солнца · <b>Лаплас</b> — из Солнца</div>
+        <div><b>Слои</b> внутри · <b>оболочки</b> снаружи</div>
+        <div><b>Дарвин</b> — на Земле · <b>Рихтер</b> — из космоса</div>
+        <div><b>Архей</b> — первая жизнь · <b>кайнозой</b> — человек</div>
+        <div><b>Полярная</b> — с места · <b>маршрутная</b> — в пути</div>
+        <div><b>Геродот</b> — история · <b>Эратосфен</b> — география</div>
+        <div><b>Колумб</b> открыл · <b>Веспуччи</b> назвал</div>
+        <div><b>Магеллан</b> — вокруг света · <b>Кук</b> — Австралия</div>
+        <div><b>Пикар и Уолш</b> — глубина · <b>Кусто</b> — акваланг</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>Лист 3 из 3 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §10–12, §15, стр. 59–69, 87–92</footer>
+</div>
+</body>
+</html>
