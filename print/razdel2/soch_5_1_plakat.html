@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Естествознание · СОч 1 четверть · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🔬</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --surface-2: #e4ebee;
+    --ink: #16263a;
+    --muted: #55697a;
+    --accent: #1f6f8b;
+    --accent-soft: #d9eaef;
+    --warm: #c97a2b;
+    --warm-soft: #f7e6d0;
+    --bad: #b0453d;
+    --bad-soft: #f6dfdc;
+    --sea: #1d5fa8;
+    --sea-soft: #dde9f7;
+    --border: rgba(22, 38, 58, 0.14);
+    --grid-line: rgba(31, 111, 139, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+      --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+      --warm: #e8a355; --warm-soft: #3a2c1a; --bad: #e08a80; --bad-soft: #3a2622;
+      --sea: #7fb3ef; --sea-soft: #1b2e45;
+      --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1821; --surface: #16232f; --surface-2: #1c2c3a;
+    --ink: #eaf1f5; --muted: #93a8b8; --accent: #5cb8cc; --accent-soft: #1d3a44;
+    --warm: #e8a355; --warm-soft: #3a2c1a; --bad: #e08a80; --bad-soft: #3a2622;
+    --sea: #7fb3ef; --sea-soft: #1b2e45;
+    --border: rgba(255, 255, 255, 0.14); --grid-line: rgba(92, 184, 204, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    padding: 40px 20px 60px;
+    display: flex; flex-direction: column; align-items: center; gap: 40px;
+  }
+
+  .sheet { width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 14px; }
+
+  header.top {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif; font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 1.95rem); margin: 0; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .subhead { color: var(--muted); font-size: 0.84rem; max-width: 92ch; line-height: 1.45; margin: 0; }
+  .legend {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--muted);
+    display: flex; gap: 14px; flex-wrap: wrap; margin-top: 2px;
+  }
+
+  /* цепочка раздела */
+  .chainline {
+    background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 7px;
+  }
+  .chainline .ttl { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.02rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 4px; align-items: stretch; }
+  .lk {
+    background: var(--accent-soft); border-radius: 6px; padding: 4px 7px; font-size: 0.72rem;
+    line-height: 1.25; flex: 1 1 110px; display: flex; flex-direction: column;
+  }
+  .lk i { font-family: "IBM Plex Mono", monospace; font-style: normal; color: var(--accent); font-weight: 600; font-size: 0.66rem; }
+  .lk b { font-size: 0.76rem; }
+  .lk span { color: var(--muted); font-size: 0.69rem; }
+  .lk.last { background: var(--warm-soft); }
+  .chainline .why { font-size: 0.76rem; line-height: 1.4; }
+
+  .goals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .goal {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    border-top: 3px solid var(--accent);
+    padding: 10px 12px 11px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .goal.wide { grid-column: 1 / -1; }
+  .goal.ocean { border: 2px solid var(--sea); border-top-width: 5px; background: var(--surface); }
+  .goal-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .goal-code {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; font-weight: 600;
+    color: #ffffff; background: var(--accent); border-radius: 999px; padding: 2px 9px;
+  }
+  .ocean .goal-code { background: var(--sea); }
+  .goal-lesson {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
+  }
+  .goal h2 {
+    font-family: "Newsreader", Georgia, serif; font-size: 1.04rem; font-weight: 600;
+    margin: 0; width: 100%; line-height: 1.25;
+  }
+  .ocean h2 { color: var(--sea); font-size: 1.12rem; }
+
+  .row { font-size: 0.77rem; line-height: 1.36; }
+  .row .k { font-weight: 600; color: var(--accent); }
+  .ocean .row .k { color: var(--sea); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 5px;
+    padding: 4px 7px; font-size: 0.74rem; line-height: 1.25; flex: 1 1 120px;
+  }
+  .chip.extra { background: var(--warm-soft); border-left-color: var(--warm); }
+  .chip b { display: block; font-size: 0.76rem; }
+  .chip span { color: var(--muted); font-size: 0.7rem; }
+
+  .steps { display: flex; flex-wrap: wrap; gap: 4px; align-items: stretch; }
+  .step {
+    background: var(--surface-2); border-radius: 5px; padding: 3px 7px;
+    font-size: 0.72rem; font-weight: 500; display: flex; align-items: center; gap: 4px;
+  }
+  .step i { font-family: "IBM Plex Mono", monospace; font-style: normal; color: var(--accent); font-weight: 600; }
+  .arrow { color: var(--muted); font-size: 0.8rem; align-self: center; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.72rem; }
+  th, td { border: 1px solid var(--border); padding: 3px 6px; text-align: left; vertical-align: top; line-height: 1.3; }
+  th { background: var(--surface-2); font-weight: 600; font-size: 0.7rem; }
+  td.y { font-family: "IBM Plex Mono", monospace; font-weight: 600; white-space: nowrap; }
+  .ocean th { background: var(--sea-soft); }
+
+  .two-col { display: grid; grid-template-columns: 1.25fr 1fr; gap: 10px; }
+  .stage { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sea); margin-bottom: 3px; }
+
+  .tip, .trap {
+    border-radius: 7px; padding: 6px 9px; font-size: 0.74rem; line-height: 1.35;
+  }
+  .tip { background: var(--warm-soft); border-left: 3px solid var(--warm); }
+  .trap { background: var(--bad-soft); border-left: 3px solid var(--bad); }
+  .tip .label, .trap .label {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; text-transform: uppercase;
+    letter-spacing: 0.07em; font-weight: 600; display: block; margin-bottom: 2px;
+  }
+  .tip .label { color: var(--warm); }
+  .trap .label { color: var(--bad); }
+  .thread { background: var(--sea-soft); border-left: 3px solid var(--sea); border-radius: 7px; padding: 6px 9px; font-size: 0.74rem; line-height: 1.38; }
+  .thread .label { font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; display: block; margin-bottom: 2px; color: var(--sea); }
+
+  .pairs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px 14px; }
+  .pairs div { font-size: 0.74rem; line-height: 1.32; padding: 2px 0; border-bottom: 1px dashed var(--border); }
+
+  footer {
+    border-top: 1px solid var(--border); padding-top: 8px; font-size: 0.7rem;
+    color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .back-link {
+    font-family: "IBM Plex Sans", sans-serif; font-size: 0.82rem; color: var(--accent);
+    text-decoration: none; align-self: flex-start;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    .goals, .two-col, .pairs { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --bg: #ffffff !important; --surface: #ffffff !important; --surface-2: #f0f0f0 !important;
+      --ink: #16263a !important; --muted: #45525e !important; --border: #93a0ab !important;
+      --accent: #1f6f8b !important; --accent-soft: #d9eaef !important;
+      --warm: #c97a2b !important; --warm-soft: #f7e6d0 !important;
+      --bad: #b0453d !important; --bad-soft: #f6dfdc !important;
+      --sea: #1d5fa8 !important; --sea-soft: #dde9f7 !important;
+    }
+    @page { size: A4; margin: 8mm; }
+    body { background: #ffffff !important; padding: 0 !important; display: block; }
+    .sheet { max-width: none; padding: 0; zoom: 0.82; gap: 10px; }
+    .sheet.s3 { zoom: 1.05; }
+    .sheet + .sheet { break-before: page; }
+    .sheet.s2 { zoom: 0.9; }
+    .back-link { display: none; }
+    * {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .goal, .chip, .tip, .trap, .thread, table, .chainline, .teacher { break-inside: avoid; }
+  }
+
+  /* пометки «учитель» / «дополнительно» */
+  .teacher { background: var(--bad-soft); border: 2px solid var(--bad); border-radius: 10px; padding: 9px 14px; }
+  .teacher .ttl { font-family: "Newsreader", Georgia, serif; font-weight: 600; font-size: 1.05rem; color: var(--bad); }
+  .teacher ol { margin: 4px 0 0; padding-left: 20px; }
+  .teacher li { font-size: 0.8rem; line-height: 1.45; }
+  .goal.must { border-top: 4px solid var(--bad); }
+  .goal.must .goal-code { background: var(--bad); }
+  .mustmark { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; font-weight: 600; color: var(--bad); background: var(--bad-soft); border: 1px solid var(--bad); border-radius: 999px; padding: 1px 8px; }
+  .goal.extra { border: 1px dashed var(--muted); border-top: 3px dashed var(--muted); opacity: 0.92; }
+  .goal.extra .goal-code { background: var(--muted); }
+  .extramark { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted); border: 1px dashed var(--muted); border-radius: 999px; padding: 1px 8px; }
+  .lk.must { background: var(--bad-soft); }
+  .lk.must i { color: var(--bad); }
+  .hyp { display: flex; flex-direction: column; gap: 5px; }
+  .hyp .h { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 5px; padding: 5px 8px; font-size: 0.75rem; line-height: 1.35; }
+  .hyp .h b { font-size: 0.82rem; }
+  .hyp .h span { color: var(--muted); font-size: 0.68rem; margin-right: 6px; }
+  .stage { color: var(--accent); }
+  small { color: var(--muted); }
+  /* фото знаков */
+  .signs-wrap { display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; align-items: start; }
+  .signs { position: relative; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; }
+  .signs img { display: block; width: 100%; height: auto; }
+  .signs .n { position: absolute; transform: translate(-50%, -50%); background: var(--bad); color: #fff; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 0.72rem; min-width: 20px; height: 20px; border-radius: 999px; display: flex; align-items: center; justify-content: center; padding: 0 4px; border: 1.5px solid #fff; }
+  .keylist { background: var(--surface-2); border-radius: 8px; padding: 8px 10px; }
+  .keylist .kh { font-weight: 600; font-size: 0.8rem; margin-bottom: 4px; }
+  .keylist .kh small { font-weight: 400; font-size: 0.66rem; display: block; }
+  .keylist ol { margin: 0; padding-left: 24px; }
+  .keylist li { font-size: 0.8rem; line-height: 1.32; }
+  @media (max-width: 720px) { .signs-wrap { grid-template-columns: 1fr; } }
+</style>
+<style>
+  /* дополнения для СОч */
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .rg { background: var(--surface-2); border-radius: 7px; padding: 6px 8px; font-size: 0.73rem; line-height: 1.33; }
+  .rg .rh { font-weight: 600; font-size: 0.78rem; margin-bottom: 2px; }
+  .rg .rh small { font-weight: 400; font-size: 0.64rem; }
+  .rg ul { margin: 0; padding-left: 15px; }
+  .rg li { margin: 1px 0; }
+  .formula { background: var(--accent-soft); border: 1.5px solid var(--accent); border-radius: 8px; padding: 7px 10px; text-align: center; }
+  .formula .f { font-family: "Newsreader", Georgia, serif; font-size: 1.35rem; font-weight: 600; }
+  .formula .f sub { font-size: 0.65em; }
+  .formula .w { font-size: 0.73rem; color: var(--muted); }
+  .calc { font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; background: var(--surface-2); border-radius: 6px; padding: 5px 8px; line-height: 1.5; }
+  .eras { display: flex; gap: 3px; align-items: stretch; }
+  .era { flex: 1 1 0; border-radius: 6px; padding: 5px 6px; font-size: 0.7rem; line-height: 1.3; background: var(--accent-soft); border-top: 3px solid var(--accent); }
+  .era > b { display: block; font-size: 0.8rem; }
+  .era i { font-family: "IBM Plex Mono", monospace; font-style: normal; font-size: 0.64rem; color: var(--muted); display: block; margin-bottom: 2px; }
+  .era.e0 { background: var(--bad-soft); border-top-color: var(--bad); }
+  .era.e3 { background: var(--warm-soft); border-top-color: var(--warm); flex-grow: 1.7; }
+  .fan { display: flex; gap: 3px; margin-top: 3px; }
+  .fan div { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 2px 4px; font-size: 0.66rem; }
+  .fan div b { font-size: 0.72rem; }
+  .keylist.cols ol { columns: 2; column-gap: 22px; }
+  td.who { font-weight: 600; white-space: nowrap; }
+  tr.grp td { background: var(--surface-2); font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; color: var(--accent); padding: 2px 6px; }
+  @media (max-width: 720px) { .rules { grid-template-columns: 1fr; } .eras, .fan { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<!-- ЛИСТ 1 -->
+<div class="sheet">
+  <a class="back-link" href="../../index.html">← на главную</a>
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · СОч за 1 четверть · вторник 20.10 · лист 1 из 3</span>
+    <h1>СОч за 1 четверть — что учить по списку учителя</h1>
+    <p class="subhead">Шесть пунктов учителя — шесть блоков, номер блока = номер в списке. Лист 1: пункты 1–3 (раздел «Мир науки» и §6). Лист 2: пункты 4–5 (§9, §10). Лист 3: пункт 6 (§13).</p>
+    <div class="legend"><span>📖 — из учебника</span><span>✏️ — подсказка от мамы, в учебнике этого нет</span></div>
+  </header>
+
+  <section class="teacher">
+    <div class="ttl">📌 Список учителя — подготовка к СОч (вторник 20.10.26):</div>
+    <ol>
+      <li><b>Правила техники безопасности</b> при выполнении исследовательской работы → блок 1</li>
+      <li><b>Формула среднего арифметического</b>, уметь вычислять (стр. 25) → блок 2</li>
+      <li><b>Примеры объектов микро- и макромира</b> (стр. 36–37) → блок 3</li>
+      <li><b>Этапы возникновения жизни на Земле</b> (стр. 52–54) → блок 4, лист 2</li>
+      <li><b>«План местности» и «условные знаки»</b> (стр. 60–62) → блок 5, лист 2</li>
+      <li><b>История освоения и изучения материков и частей света</b> (стр. 71–78) → блок 6, лист 2</li>
+    </ol>
+  </section>
+
+  <div class="goals">
+
+    <!-- 1. Техника безопасности -->
+    <section class="goal must wide">
+      <div class="goal-head">
+        <span class="goal-code">1 · ТБ</span>
+        <span class="goal-lesson">ур. §2–5, §8 · стр. 15, 20, 29, 50</span>
+        <span class="mustmark">📌 учитель</span>
+        <h2>Правила техники безопасности при исследовательской работе</h2>
+      </div>
+      <div class="row">📖 В учебнике правила <b>не списком</b>: перед опытами стоит рамка «Помни! Правила техники безопасности…» — с огнём (свеча, стр. 29; горелка, стр. 50), с электроприборами (лампа, стр. 20). Цель уроков §2 и §3 — «<b>формулировать</b> правила техники безопасности», то есть уметь назвать их самому. Сами правила ниже — ✏️ общие школьные, по этим ситуациям.</div>
+      <div class="rules">
+        <div class="rg"><div class="rh">Всегда ✏️</div><ul>
+          <li>начинать опыт только <b>с разрешения учителя</b> и по инструкции</li>
+          <li>на столе — только нужное; не бегать, не толкаться</li>
+          <li><b>ничего не пробовать на вкус</b></li>
+          <li>нюхать не прямо — <b>подгонять воздух рукой</b></li>
+          <li>пролил, разбил, обжёгся — <b>сразу сказать учителю</b></li>
+          <li>после работы — убрать место, <b>вымыть руки</b></li>
+        </ul></div>
+        <div class="rg"><div class="rh">Огонь <small>· свеча стр. 29, горелка стр. 50</small></div><ul>
+          <li>📖 закрыть окна, <b>чтобы не было сквозняка</b> (стр. 29)</li>
+          <li>✏️ длинные волосы убрать, рукава подвернуть</li>
+          <li>✏️ рядом не держать бумагу и горючее</li>
+          <li>✏️ не наклоняться над пламенем, не оставлять огонь без присмотра</li>
+          <li>✏️ горячее брать <b>держателем</b>; пробирку — отверстием <b>от себя и от соседей</b></li>
+          <li>✏️ спичку и свечу после опыта погасить</li>
+        </ul></div>
+        <div class="rg"><div class="rh">Электроприборы <small>· лампа стр. 20</small></div><ul>
+          <li>✏️ не трогать <b>мокрыми руками</b></li>
+          <li>✏️ провод должен быть целым; сломанный прибор не включать</li>
+          <li>✏️ вилку вынимать за корпус, <b>не за провод</b></li>
+          <li>✏️ лампа нагревается — не трогать</li>
+        </ul>
+        <div class="rh" style="margin-top:4px">Опрос <small>· §2, стр. 15</small></div><ul>
+          <li>📖 респондент должен чувствовать себя <b>комфортно</b>; вопросы — <b>чёткие</b></li>
+        </ul></div>
+      </div>
+      <div class="tip"><span class="label">✏️ Если спросят «назови правила» — по 1–2 из каждой колонки</span>Образец: «Работать только с разрешения учителя; ничего не пробовать на вкус; при работе с огнём убрать волосы и закрыть окна; электроприборы не трогать мокрыми руками; после работы вымыть руки». На рисунке стр. 29 <b>опасно</b>: горящие свечи у деревянной двери и на полу, мальчик тянется со свечой, стоя на табурете.</div>
+    </section>
+
+    <!-- 2. Среднее арифметическое -->
+    <section class="goal must">
+      <div class="goal-head">
+        <span class="goal-code">2 · §4</span>
+        <span class="goal-lesson">ур. §4 · стр. 25</span>
+        <span class="mustmark">📌 учитель</span>
+        <h2>Среднее арифметическое — формула и расчёт</h2>
+      </div>
+      <div class="row">📖 <span class="k">Среднее арифметическое</span> — усреднённое значение для группы наблюдений: <b>сложить</b> все числа ряда и <b>разделить</b> сумму на <b>количество</b> чисел.</div>
+      <div class="formula">
+        <div class="f">СА = (a<sub>1</sub> + a<sub>2</sub> + … + a<sub>n</sub>) / n</div>
+        <div class="w">📖 a — значение измерения, n — количество значений</div>
+      </div>
+      <div class="calc">📖 Температура за день: 5 °C, 7 °C, 6 °C<br>(5 + 7 + 6) / 3 = 18 / 3 = <b>6 °C</b></div>
+      <div class="calc">✏️ Рост ростка: 12, 15, 18, 15 мм<br>(12 + 15 + 18 + 15) / 4 = 60 / 4 = <b>15 мм</b></div>
+      <div class="trap"><span class="label">✏️ Ловушка</span>Делить на <b>количество чисел</b>, а не на 2. Посчитай числа пальцем: 4 числа — делим на 4. Ответ — с той же единицей (°C, мм). Проверка: среднее всегда <b>между самым маленьким и самым большим</b> числом.</div>
+      <div class="row">✏️ Зачем мерить несколько раз (вопрос стр. 25): одно измерение может быть с ошибкой, среднее из нескольких — точнее.</div>
+    </section>
+
+    <!-- 3. Микро- и макромир -->
+    <section class="goal must">
+      <div class="goal-head">
+        <span class="goal-code">3 · §6</span>
+        <span class="goal-lesson">ур. §6 · стр. 36–37</span>
+        <span class="mustmark">📌 учитель</span>
+        <h2>Микромир и макромир — примеры объектов</h2>
+      </div>
+      <div class="row">📖 <span class="k">Микромир</span> — молекулы, атомы, элементарные частицы; без микроскопа не обнаружить.</div>
+      <div class="row">📖 <span class="k">Макромир</span> — объекты больше молекулы, но меньше звёздных систем; главный объект — <b>человек</b>.</div>
+      <table>
+        <tr><th>Микромир — примеры</th><th>Макромир — примеры</th></tr>
+        <tr><td>атом, молекула воды, элементарная частица, вирус, бактерия (бифидобактерия) 📖</td><td>человек, дерево, автомобиль 📖; портфель, дом, кошка ✏️</td></tr>
+      </table>
+      <div class="steps">
+        <div class="step"><i>1</i>элементарная частица</div><span class="arrow">→</span>
+        <div class="step"><i>2</i>атом</div><span class="arrow">→</span>
+        <div class="step"><i>3</i>молекула</div><span class="arrow">→</span>
+        <div class="step"><i>4</i>тело, предмет</div>
+      </div>
+      <div class="row">📖 Микромир — основа макромира, как <b>кирпичи — основа дома</b>.</div>
+      <div class="tip"><span class="label">✏️ Как узнать в задании</span>Видно глазом, можно взять в руки — <b>макро</b>. Нужен микроскоп — <b>микро</b>. Бактерии и вирусы живые, но всё равно <b>микромир</b>. Звёзды и галактики больше макромира — это уже не макро.</div>
+    </section>
+
+  </div>
+
+  <footer>Лист 1 из 3 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §2–6, стр. 15–37 · список — фото учителя</footer>
+</div>
+
+<!-- ЛИСТ 2 -->
+<div class="sheet s2">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · СОч за 1 четверть · лист 2 из 3</span>
+    <h1>Как возникла жизнь · план местности и условные знаки</h1>
+  </header>
+
+  <div class="goals">
+
+    <!-- 4. Этапы жизни -->
+    <section class="goal must wide">
+      <div class="goal-head">
+        <span class="goal-code">4 · §9</span>
+        <span class="goal-lesson">ур. §9 · стр. 52–54</span>
+        <span class="mustmark">📌 учитель</span>
+        <h2>Этапы возникновения жизни на Земле</h2>
+      </div>
+      <div class="row">📖 <span class="k">Гипотеза</span> — предположение или догадка. Две гипотезы: <span class="k">эволюции</span> — <b>Ч. Дарвин</b> (1809–1882): жизнь существует благодаря <b>естественному отбору</b> и борьбе за выживание; <span class="k">панспермии</span> — немецкий учёный <b>Рихтер, 1865</b>: жизнь занесена из космоса <b>метеоритами и космической пылью</b>.</div>
+      <div class="eras">
+        <div class="era e0"><i>≈ 4,56–4 млрд лет назад</i><b>Доархей</b>формируются Земля, оболочки, Луна, гранит</div>
+        <div class="era"><i>≈ 4–2,5 млрд</i><b>Архей</b>благоприятные условия; жизнь — <strong>не позже 3,5 млрд лет назад</strong>; первые организмы простейшего строения</div>
+        <div class="era"><i>≈ 2,5–0,54 млрд</i><b>Протерозой</b>кислород, клетки с ядром; в океане водоросли и первые многоклеточные: губки, кишечнополостные, моллюски, черви</div>
+        <div class="era e3"><i>≈ 0,54 млрд — сейчас</i><b>Фанерозой — время «явной» жизни</b>
+          <div class="fan">
+            <div><b>палеозой</b><br>разлив морей, суша распалась на материки; панцирные животные; в конце многие вымерли</div>
+            <div><b>мезозой</b><br>растения и животные разнообразнее; динозавры</div>
+            <div><b>кайнозой</b><br>от насекомоядных — приматы, от них <b>человек</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="trap"><span class="label">✏️ Как запомнить порядок</span><b>Архей → Протерозой → Палеозой → Мезозой → Кайнозой</b>. Смысл приставок: <b>палео</b> — древний, <b>мезо</b> — средний, <b>кайно</b> — новый. Жизнь усложнялась, потому что выживали самые приспособленные (📖 естественный отбор). Человек — в <b>кайнозое</b>. Числа — 📖 с ленты времени стр. 53, примерно по шкале.</div>
+    </section>
+
+    <!-- 5. План и знаки -->
+    <section class="goal must wide">
+      <div class="goal-head">
+        <span class="goal-code">5 · §10</span>
+        <span class="goal-lesson">ур. §10 · стр. 60–62</span>
+        <span class="mustmark">📌 учитель</span>
+        <h2>«План местности» и «условные знаки»</h2>
+      </div>
+      <div class="row">📖 <span class="k">План местности</span> — чертёж на бумаге небольшого участка земной поверхности в уменьшенном виде; объекты показаны условными знаками. Местность на плане: <b>1) на плоскости · 2) в уменьшенном виде без искажений · 3) условными знаками</b>.</div>
+      <div class="row">📖 <span class="k">Условные знаки</span> — символы, обозначающие на планах и картах объекты; знаки похожи на сами объекты. 📖 <span class="k">Легенда</span> — все условные знаки карты или плана с объяснением.</div>
+      <div class="signs-wrap">
+        <div class="signs">
+          <img src="img/sor2_znaki_pole.jpeg" alt="Условные знаки плана местности, учебник стр. 62">
+          <span class="n" style="left:4.6%;top:7.7%">1</span>
+          <span class="n" style="left:24.5%;top:4.7%">2</span>
+          <span class="n" style="left:46.0%;top:9.9%">3</span>
+          <span class="n" style="left:71.0%;top:5.9%">4</span>
+          <span class="n" style="left:6.6%;top:37.7%">5</span>
+          <span class="n" style="left:19.1%;top:29.9%">6</span>
+          <span class="n" style="left:44.1%;top:35.2%">7</span>
+          <span class="n" style="left:59.8%;top:39.2%">8</span>
+          <span class="n" style="left:75.6%;top:28.8%">9</span>
+          <span class="n" style="left:95.4%;top:42.9%">10</span>
+          <span class="n" style="left:10.3%;top:61.4%">11</span>
+          <span class="n" style="left:33.2%;top:52.1%">12</span>
+          <span class="n" style="left:5.5%;top:77.5%">13</span>
+          <span class="n" style="left:25.3%;top:73.2%">14</span>
+          <span class="n" style="left:40.0%;top:72.5%">15</span>
+          <span class="n" style="left:53.0%;top:76.2%">16</span>
+          <span class="n" style="left:80.3%;top:75.0%">17</span>
+        </div>
+        <div class="keylist cols">
+          <div class="kh">Знаки стр. 62 — ключ ✏️ <small>(в учебнике ответа нет)</small></div>
+          <ol>
+            <li>отдельно стоящее дерево</li>
+            <li>фруктовый сад</li>
+            <li>пески</li>
+            <li>смешанный лес</li>
+            <li>колодец («К»)</li>
+            <li>болото</li>
+            <li>деревянный мост</li>
+            <li>луг</li>
+            <li>обрыв</li>
+            <li>населённый пункт</li>
+            <li>грунтовая дорога</li>
+            <li>лиственный лес</li>
+            <li>кустарник</li>
+            <li>озеро</li>
+            <li>река</li>
+            <li>родник</li>
+            <li>хвойный лес</li>
+          </ol>
+        </div>
+      </div>
+      <div class="tip"><span class="label">✏️ Как запомнить</span><b>Цвет</b>: зелёный — растёт (леса, сад, кустарник) · голубой — вода (река, озеро, болото, родник). <b>Значок</b>: ёлочка — хвойный, листик — лиственный, оба — смешанный; кружки рядами — сад, вразброс — кустарник; точки — пески; «ıı» — луг; синие чёрточки — болото. <b>Верх плана — север.</b></div>
+    </section>
+
+  </div>
+
+  <footer>Лист 2 из 3 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §9–10, стр. 52–62 · условные знаки — фото учителя со стр. 62</footer>
+</div>
+
+<!-- ЛИСТ 3 -->
+<div class="sheet s3">
+  <header class="top">
+    <span class="eyebrow">Естествознание · 5 класс · СОч за 1 четверть · лист 3 из 3</span>
+    <h1>Кто открывал материки и части света — §13</h1>
+  </header>
+
+  <div class="goals">
+
+    <!-- 6. Материки -->
+    <section class="goal must wide">
+      <div class="goal-head">
+        <span class="goal-code">6 · §13</span>
+        <span class="goal-lesson">ур. §13 · стр. 71–78</span>
+        <span class="mustmark">📌 учитель</span>
+        <h2>История освоения и изучения материков и частей света</h2>
+      </div>
+      <table>
+        <tr><th>Кто</th><th>Когда</th><th>Что сделал 📖</th></tr>
+        <tr class="grp"><td colspan="3">Древний мир</td></tr>
+        <tr><td class="who">Финикийцы</td><td class="y">VI в. до н. э.</td><td>по поручению фараона Нехо II почти за 3 года <b>обогнули Африку</b> (тогда — Ливия): она очень большая и окружена водой</td></tr>
+        <tr><td class="who">Геродот</td><td class="y">V в. до н. э.</td><td>грек, «родоначальник многих наук»; поднялся по Нилу; в «Истории» описал <b>Каспийское море</b> и племена на земле Казахстана</td></tr>
+        <tr><td class="who">Эратосфен</td><td class="y">—</td><td>первым <b>вычислил размеры Земли</b>; «<b>отец географии</b>» — выделил её в отдельную науку</td></tr>
+        <tr class="grp"><td colspan="3">Средние века</td></tr>
+        <tr><td class="who">Викинги</td><td class="y">X в.</td><td>«люди моря»: Скандинавия → остров Исландия → открыли <b>Гренландию</b></td></tr>
+        <tr><td class="who">Марко Поло</td><td class="y">1271–1295</td><td>из Венеции в <b>Китай</b>, служил секретарём у императора</td></tr>
+        <tr><td class="who">Афанасий Никитин</td><td class="y">1466</td><td>купец, 3 года путешествовал в <b>Индию</b>; книга «Хождение за три моря»</td></tr>
+        <tr class="grp"><td colspan="3">Эпоха Великих географических открытий — середина XV — середина XVII века</td></tr>
+        <tr><td class="who">Бартоломеу Диаш</td><td class="y">1487</td><td>португалец, первым из европейцев <b>обогнул Африку с юга</b></td></tr>
+        <tr><td class="who">Христофор Колумб</td><td class="y">1492</td><td>вышел 3 августа, <b>12 октября</b> — остров Сан-Сальвадор (Багамы) = <b>открытие Америки</b>; думал, что это Индия, — отсюда «индейцы»</td></tr>
+        <tr><td class="who">Васко да Гама</td><td class="y">1498</td><td>португалец, <b>морской путь из Европы в Индию</b> вокруг мыса Доброй Надежды</td></tr>
+        <tr><td class="who">Америго Веспуччи</td><td class="y">—</td><td>его экспедиции показали, что это <b>новый континент</b>; в его честь — <b>Америка</b></td></tr>
+        <tr><td class="who">Фернан Магеллан</td><td class="y">1519</td><td><b>первое кругосветное</b>: 5 кораблей, обогнул Америку с юга, назвал океан <b>Тихим</b>; погиб на Филиппинах, вернулись «Виктория» и 18 человек из 265</td></tr>
+        <tr class="grp"><td colspan="3">Последние материки</td></tr>
+        <tr><td class="who">Абель Тасман</td><td class="y">1642</td><td>голландец, доказал, что есть южный материк — <b>Австралия</b></td></tr>
+        <tr><td class="who">Джеймс Кук</td><td class="y">—</td><td>англичанин, исследовал восточный берег Австралии, открыл <b>Большой Барьерный риф</b>; на юге встретил только туманы и льды</td></tr>
+        <tr><td class="who">Беллинсгаузен и Лазарев</td><td class="y">28.01.1820</td><td>русские моряки, открыли <b>Антарктиду</b> — последний, <b>шестой</b> материк</td></tr>
+      </table>
+      <div class="row">📖 Стр. 71: <b>Тур Хейердал</b> (норвежец, 1914–2002) на плоту поплыл по Тихому океану — доказал, что древние люди могли так путешествовать.</div>
+      <div class="trap"><span class="label">✏️ Ловушки — пары, которые путают</span><b>Диаш</b> обогнул Африку (1487), <b>да Гама</b> дошёл до Индии (1498) · <b>Колумб</b> открыл Америку, <b>Веспуччи</b> дал ей имя · <b>Эратосфен</b> — «отец географии», а Геродот — путешественник и историк · <b>Тасман</b> — Австралия, <b>Беллинсгаузен и Лазарев</b> — Антарктида.</div>
+    </section>
+
+  </div>
+
+  <footer>Лист 3 из 3 · Верховцева Л.А., Костюченко О.А., Ушакова М.В. «Естествознание. 5 класс», часть 1, Алматыкітап баспасы, 2019 — §13, стр. 71–78</footer>
+</div>
+</body>
+</html>
